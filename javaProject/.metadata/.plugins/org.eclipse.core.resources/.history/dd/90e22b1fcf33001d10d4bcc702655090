@@ -1,0 +1,43 @@
+package first;
+
+public class Calculator {
+	public static void main(String[] args) {
+		/*
+			숫자 두 개를 매개변수의 인자로 전달받아 더하기 메소드를 추가합시다.
+			숫자 두 개를 매개변수의 인자로 전달받아 빼기 메소드를 추가합시다.
+			숫자 두 개를 매개변수의 인자로 전달받아 곱하기 메소드를 추가합시다.
+			숫자 두 개를 매개변수의 인자로 전달받아 나누기 메소드를 추가합시다.
+		*/
+		
+		plus(50,153);
+		minus(87, 30);
+		div(150, 50);
+		mul(24, 30);
+	}
+	
+	public static long plus(long a, long b) {
+		long result = a + b; 
+		System.out.println("plus "+result);
+		return result;
+	}
+	
+	public static long minus(long a, long b) {
+		long result = a - b;
+		System.out.println("minus "+result);
+		return result;
+	}
+	
+	public static long div(long a, long b) {
+		long result = a / b;
+		System.out.println("div "+result);
+		return result;
+	}
+	
+	public static long mul(long a, long b) {
+		long result = a * b;
+		System.out.println("mul "+result);
+		return result;
+	}
+	
+}
+

@@ -1,0 +1,47 @@
+package first;
+
+public class Calculator {
+	public static void main(String[] args) {
+		/*
+			숫자 두 개를 매개변수의 인자로 전달받아 더하기 메소드를 추가합시다.
+			숫자 두 개를 매개변수의 인자로 전달받아 빼기 메소드를 추가합시다.
+			숫자 두 개를 매개변수의 인자로 전달받아 곱하기 메소드를 추가합시다.
+			숫자 두 개를 매개변수의 인자로 전달받아 나누기 메소드를 추가합시다.
+		*/
+		
+		add(50,153);
+		substract(87, 30);
+		multiply(24, 30);
+		divide(150, 50);
+	}
+	
+//	숫자 두 개를 매개변수의 인자로 전달받아 더하기 메소드를 추가합시다.
+	public static long add(long a, long b) {
+//		long result = a + b; 
+//		return result;
+		return a+b;
+	}
+	
+//	숫자 두 개를 매개변수의 인자로 전달받아 빼기 메소드를 추가합시다.
+	public static long substract(long a, long b) {
+//		long result = a - b;
+//		return result;
+		return a-b;
+	}
+	
+//	숫자 두 개를 매개변수의 인자로 전달받아 곱하기 메소드를 추가합시다.
+	public static long multiply(long a, long b) {
+//		long result = a * b;
+//		return result;
+		return a*b;
+	}
+	
+//	숫자 두 개를 매개변수의 인자로 전달받아 나누기 메소드를 추가합시다.
+	public static long divide(long a, long b) {
+//		long result = a / b;
+//		return result;
+		return a/b;
+	}
+	
+}
+
