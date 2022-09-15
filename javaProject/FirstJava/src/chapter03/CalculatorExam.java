@@ -110,7 +110,7 @@ public class CalculatorExam {
 		
 		Scanner sc = new Scanner(System.in);
 		
-		System.out.println("첫번째 숫자를 입력해주세요.");
+		System.out.print("첫번째 숫자를 입력해주세요 >>>");
 		num = Integer.parseInt(sc.nextLine());
 		return num;
 	}
@@ -120,7 +120,7 @@ public class CalculatorExam {
 		
 		Scanner sc = new Scanner(System.in);
 		
-		System.out.println("두번째 숫자를 입력해주세요.");
+		System.out.print("두번째 숫자를 입력해주세요 >>>");
 		num = Integer.parseInt(sc.nextLine());
 		return num;
 	}
@@ -129,7 +129,7 @@ public class CalculatorExam {
 		double num = 0;
 		Scanner sc = new Scanner(System.in);
 		
-		System.out.println("반지름을 입력해주세요.");
+		System.out.print("반지름을 입력해주세요 >>>");
 		num = Integer.parseInt(sc.nextLine());
 		return num;
 	}
