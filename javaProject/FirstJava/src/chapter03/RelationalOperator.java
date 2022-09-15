@@ -1,6 +1,6 @@
 package chapter03;
 
-public class relationalOperator {
+public class RelationalOperator {
 
 	public static void main(String[] args) {
 		

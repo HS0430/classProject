@@ -1,6 +1,6 @@
 package chapter03;
 
-public class postfix {
+public class Postfix {
 	public static void main(String[] args) {
 		
 		int num1 = 5;
