@@ -8,7 +8,7 @@ public class Chapter4_exam1 {
 		int result = 1;
 		
 		for(int num=1; num<=10; num++) {
-			result *= num;
+			result *= num;	//result * num을 한 값을 result에 대입 > 1*1, 2*2, 6*3, 24*4 ... 
 			System.out.println(num + " * " + result + " = " + result*num + "\n");
 		}
 	}

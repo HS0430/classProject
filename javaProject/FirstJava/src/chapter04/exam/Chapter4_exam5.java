@@ -14,7 +14,7 @@ public class Chapter4_exam5 {
 
 		int n = 1;
 		
-		if(n == 1) {
+		if(n == 1) {	//if else if else로 조건 구분
 			System.out.println("현재 인원은 1명 입니다.");
 		}
 			
@@ -30,7 +30,8 @@ public class Chapter4_exam5 {
 			System.out.println("현재 많은 사람들이 있습니다.");
 		}
 		
-		if(n>3) {
+		
+		if(n>3) {	// if와 else로 3명보다 많거나 그 외에 구분 후, else 내에서 1,2,3명일 때 구분
 			System.out.println("현재 많은 사람들이 있습니다.");
 		}
 		else {
@@ -45,7 +46,7 @@ public class Chapter4_exam5 {
 			}
 		}
 		
-		switch(n) {
+		switch(n) {	//스위치 문으로 1,2,3,default(3보다 큼)으로 구분
 		case 1:
 			System.out.println("현재 인원은 1명 입니다.");
 			break;

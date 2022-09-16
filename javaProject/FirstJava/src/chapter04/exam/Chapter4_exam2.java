@@ -21,11 +21,11 @@ public class Chapter4_exam2 {
 		
 		while(true) {
 			
-			if(num%2 == 1 || num%3 == 0) {
-				sum += num;				
+			if(num%2 == 1 || num%3 == 0) {	//num을 2로나누어 나머지가 1인 수 (홀수) 또는 num을 3으로 나누어 나머지가 0인 수 3의 배수
+				sum += num;					// sum에 조건에 맞는 num 값을 더함
 			}
 			
-			if(sum > 1000) {
+			if(sum > 1000) {	//sum이 1000보다 크면 break;
 				break;
 			}
 			num++;

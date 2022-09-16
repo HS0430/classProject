@@ -24,7 +24,7 @@ public class Chapter4_exam4 {
 		//각각의 자리수 = 0~9
 		
 		for(int i=0; i<10; i++) {
-			System.out.println("A : "+ i +" 일때, B : " + (9-i));
+			System.out.println("A : "+ i +" 일때, B : " + (9-i)); //A와 B의 합이 9인 경우의 수
 		}
 	}
 
