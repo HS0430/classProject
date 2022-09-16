@@ -35,10 +35,10 @@ public class ForLoopTest2 {
 //		}
 		
 		// 단의 반복 : 2~9
-		for(int a=2; a<=9; a++) {
+		for(int a=2; a<=9; a++) {	//구구단에서 단을 만드는 for문 2 3 4 5 6 7 8 9
 			System.out.println(a + "단");
 			System.out.println("--------");
-			for(int b=1; b<=9; b++) {
+			for(int b=1; b<=9; b++) {	// 1부터 9까지 반복 2x1 2x2 2x3 ...
 				System.out.println(a + " X " + b + " = " + (a*b));
 			}
 			System.out.println("--------");

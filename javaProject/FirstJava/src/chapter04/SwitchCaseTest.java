@@ -16,7 +16,7 @@ public class SwitchCaseTest {
 			//연산
 			//메소드 호출
 			//객체 생성
-			break;
+			break;	// 브레이크가 없을 경우 해당 case부터 아래에 존재하는 모든 케이스를 무조건 처리함 (단 break가 있으면 빠져나감)
 
 		case 2:
 			System.out.println("2일 때 처리");
