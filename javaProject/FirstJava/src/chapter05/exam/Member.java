@@ -9,13 +9,13 @@ public class Member {
 	 * ④ main() 메소드에서 두 가지 생성자를 이용해서 인스턴스 생성하고 출력 메소드를 통해 저장된 데이터 출력
 	 */
 	
-	String name;
-	String phoneNum;
-	String major;
-	int grade;
-	String eMail;
-	String birth;
-	String address;
+	private String name;
+	private String phoneNum;
+	private String major;
+	private int grade;
+	private String eMail;
+	private String birth;
+	private String address;
 	
 	public String getName() {
 		return name;
@@ -92,12 +92,12 @@ public class Member {
 	}
 	
 	void showMemberInfo() {
-		System.out.println(" 이름 : " + name);
-		System.out.println(" 전화번호 : " + phoneNum);
-		System.out.println(" 전공 : " + major);
-		System.out.println(" 학년 : " + grade);
-		System.out.println(" email : " + eMail);
-		System.out.println(" 생일 : " + birth);
-		System.out.println(" 주소 : " + address);
+		System.out.println(" 이름 : " + this.name);
+		System.out.println(" 전화번호 : " + this.phoneNum);
+		System.out.println(" 전공 : " + this.major);
+		System.out.println(" 학년 : " + this.grade);
+		System.out.println(" email : " + this.eMail);
+		System.out.println(" 생일 : " + this.birth);
+		System.out.println(" 주소 : " + this.address);
 	}
 }
