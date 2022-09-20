@@ -30,8 +30,7 @@ public class ContactMain {
 			con.setGroup(sc.nextLine());
 
 			// 저장할 데이터를 콘솔에서 사용자의 입력 값으로 인스턴스를 생성, 연락처 데이터를 저장하는 인스턴스를 생성
-			con = new Contact(con.getName(), con.getPhoneNum(), con.getEmail(), con.getAddress(), con.getBirthday(),
-					con.getGroup());
+			con = new Contact(con.getName(), con.getPhoneNum(), con.getEmail(), con.getAddress(), con.getBirthday(), con.getGroup());
 
 			// 생성된 인스턴스의 정보 출력 메소드를 호출
 			con.showContactInfo();
@@ -51,8 +50,7 @@ public class ContactMain {
 		con.setBirthday("2022-09-20");
 		con.setGroup("미지정");
 
-		con = new Contact(con.getName(), con.getPhoneNum(), con.getEmail(), con.getAddress(), con.getBirthday(),
-				con.getGroup());
+		con = new Contact(con.getName(), con.getPhoneNum(), con.getEmail(), con.getAddress(), con.getBirthday(), con.getGroup());
 
 		con.showContactInfo();
 
