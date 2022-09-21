@@ -49,8 +49,30 @@ public class ContactMain2 {
 				System.out.println("올바른 요청이 아닙니다.");
 				continue;
 			}
+			
 			System.out.println("데이터 입력을 시작합니다.");
-		
+			
+			System.out.print("이름 >>> ");
+			String name = in.nextLine();
+			
+			System.out.print("전화번호 >>> ");
+			String phoneNumber = in.nextLine();
+			
+			System.out.print("이메일 >>> ");
+			String email = in.nextLine();
+			
+			System.out.print("주소 >>> ");
+			String address = in.nextLine();
+			
+			System.out.print("생일 >>> ");
+			String birthday = in.nextLine();
+			
+			System.out.print("그룹 >>> ");
+			String group = in.nextLine();
+			
+			Contact2 c = new Contact2(name, phoneNumber, email, address, birthday, group);
+			
+			c.printInfo();
 		}
 	}
 
