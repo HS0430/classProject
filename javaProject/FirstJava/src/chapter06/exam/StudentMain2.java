@@ -8,7 +8,7 @@ public class StudentMain2 {
 		
 		Scanner in = new Scanner(System.in);
 		
-		Student2[] st = new Student2[3];
+		Student2[] st = new Student2[10];
 		
 		for(int i=0; i<st.length; i++) {
 			int kor = 0;
