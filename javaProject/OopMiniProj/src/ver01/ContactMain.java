@@ -32,6 +32,16 @@ public class ContactMain {
 			// 저장할 데이터를 콘솔에서 사용자의 입력 값으로 인스턴스를 생성, 연락처 데이터를 저장하는 인스턴스를 생성
 			con = new Contact(con.getName(), con.getPhoneNum(), con.getEmail(), con.getAddress(), con.getBirthday(), con.getGroup());
 
+			System.out.println("연락처 정보 ------------print");
+			System.out.println("이름 : " + con.getName());
+			System.out.println("전화번호 : " + con.getPhoneNum());
+			System.out.println("E-mail : " + con.getEmail());
+			System.out.println("주소 : " + con.getAddress());
+			System.out.println("생일 : " + con.getBirthday());
+			System.out.println("그룹 : " + con.getGroup());
+			
+			System.out.println();
+			
 			// 생성된 인스턴스의 정보 출력 메소드를 호출
 			con.showContactInfo();
 
@@ -43,14 +53,9 @@ public class ContactMain {
 
 		}
 
+		// 인스턴스의 각 변수에 값을 바꾸는 메소드를 이용해서 데이터를 수정합니다.
 		con.setName("가나다");
 		con.setPhoneNum("010-9999-8888");
-		con.setEmail("abcdefg@gmail.com");
-		con.setAddress("서울시 강동구");
-		con.setBirthday("2022-09-20");
-		con.setGroup("미지정");
-
-		con = new Contact(con.getName(), con.getPhoneNum(), con.getEmail(), con.getAddress(), con.getBirthday(), con.getGroup());
 
 		con.showContactInfo();
 
