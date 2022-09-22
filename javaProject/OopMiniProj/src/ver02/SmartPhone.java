@@ -8,28 +8,29 @@ public class SmartPhone {
 	Scanner sc;
 	private int contactCnt;
 	
-	SmartPhone(int size){
-		con = new Contact[size];
-		sc = new Scanner(System.in);
-		contactCnt = 0;
+	SmartPhone(int size){	// 생성자 int Size = 10
+		con = new Contact[size];	// Contact[size]로 초기화 
+		sc = new Scanner(System.in);	// Scanner 초기화
+		contactCnt = 0;					// contactCnt = 0으로 초기화
 	}
 	
+	//SmartPhone 인스턴스 생성 매개변수 값 10 _ 외부 참조 못하게 private, 프로그램 실행 시 존재할 수 있께 static
 	private static SmartPhone sp = new SmartPhone(10);
 	
-	public static SmartPhone getInstance() {
+	public static SmartPhone getInstance() {	// 외부에서 참조할 수 있게함 getInstance
 		
-		if(sp == null) {
-			sp = new SmartPhone(10);
+		if(sp == null) {	// 위에서 sp가 제대로 생성이 안된 경우
+			sp = new SmartPhone(10);	// 여기서 다시 생성
 		}
 		
 		return sp;
 	}
 		
-	
+	// 전화번호부 저장
 	public void insertContact() {
 		
 		System.out.println("---------- INSERT ----------");
-		if (contactCnt == con.length) {
+		if (contactCnt == con.length) {	//저장 및 삭제 등 Contact 배열의 index contactCnt와 con.length(배열의 크기)가 같은 경우
 			System.out.println("최대 저장 개수는 " + con + "개 입니다.");
 			return;
 		}
@@ -58,7 +59,7 @@ public class SmartPhone {
 
 		// 3. 배열에 저장
 		// 처음 입력 : numOfContact => 0
-		con[contactCnt++] = contact;
+		con[contactCnt++] = contact;	// con[i]배열에 contact 인스턴스 저장
 		
 		System.out.println("----------------------------");
 	}
@@ -67,19 +68,19 @@ public class SmartPhone {
 		
 		System.out.println("---------- UPDATE ----------");
 
-		int searchIndex = -1;
+		int searchIndex = -1;		// 검색한 index 값을 저장하기 위한 변수 (-1로 초기화 하여 찾지 못한 경우 처리)
 		System.out.println("수정을 시작 합니다.");
 		System.out.println("수정할 이름을 입력해 주세요.");
 		String name = sc.nextLine();
 		
 		for(int i=0; i<contactCnt; i++) {
-			if(con[i].getName().equals(name)) {
+			if(con[i].getName().equals(name)) {		//con 배열의 name값과 입력받은 name 비교
 				searchIndex = i;
 				break;
 			}
 		}
 		
-		if(searchIndex < 0 ) {
+		if(searchIndex < 0 ) {		// -1로 초기화하여 검색하지 못하면 처리
 			System.out.println(name + "에 대한 검색 결과가 없습니다.");
 			return;
 		}
@@ -89,7 +90,7 @@ public class SmartPhone {
 
 		System.out.print("변경하고자 하는 이름을 입력해 주세요. 변경하지 않으려면 엔터를 치세요. \n (현재 값 : " + cont.getName() + ")\n");
 		String uptName = sc.nextLine();
-		if (uptName != null && uptName.trim().length() > 0) {
+		if (uptName != null && uptName.trim().length() > 0) {		//입력받은 값이 널이 아니거나 length가 0보다 크면 입력받은 값을 set
 			cont.setName(uptName);
 		}
 		
@@ -134,7 +135,7 @@ public class SmartPhone {
 		System.out.println("삭제를 시작 합니다.");
 		System.out.println("삭제할 이름을 입력해 주세요.");
 		String name = sc.nextLine();
-		int delIndex = -1;
+		int delIndex = -1;		// 검색과 같은 로직 (실제 검색 하여 삭제할 대상을 찾아야하므로 동일함)
 		for(int i=0; i<contactCnt; i++) {
 			if(con[i].getName().equals(name)) {
 				delIndex = i;
@@ -146,10 +147,10 @@ public class SmartPhone {
 			System.out.println(name + "에 대한 검색 결과가 없습니다.");
 		}
 		else {
-			for(int i=delIndex; i<contactCnt; i++) {
-				con[i] = con[i+1];
+			for(int i=delIndex; i<contactCnt; i++) {	// 해당하는 대상을 찾으면 해당 index 값부터 배열의 마지막 index 처리
+				con[i] = con[i+1];						// 5번째 => con[5] = con[6]을 저장 위와 같이 배열 마지막까지 적용 (실제 삭제라기보단 참조주소값을 바꿔버림)
 		}
-			contactCnt--;
+			contactCnt--;		// contactCnt 현재 저장된 index의 값 -1 
 			System.out.println(name + "에 대한 정보가 삭제 되었습니다.");
 			
 		}
@@ -166,16 +167,16 @@ public class SmartPhone {
 		
 		for(int i=0; i<contactCnt; i++) {
 			if(con[i].getName().equals(name)) {
-				contact = con[i];
+				contact = con[i];					// contact 객체에 con[i]값을 저장
 				break;
 			}
 		}
 		
-		if(contact == null) {
+		if(contact == null) {	// 아무 값도 찾지 못한 경우 contact가 위에 초기화한 값인 null이므로 아래와 같이 처리
 			System.out.println(name + "에 대한 검색 결과가 없습니다.");
 		}
 		else {
-			contact.showContactInfo();
+			contact.showContactInfo();		// 위에서 저장된 값을 출력 (해당 이름에대한 연락처 정보)
 		}
 		
 		System.out.println("----------------------------");
@@ -191,7 +192,7 @@ public class SmartPhone {
 		}
 		else {
 			for(int i=0; i<contactCnt; i++) {
-				con[i].showContactInfo();
+				con[i].showContactInfo();	// con[i]배열에 저장된 연락처 정보 출력
 			}
 		}
 	}
