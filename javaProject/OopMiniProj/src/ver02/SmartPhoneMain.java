@@ -34,7 +34,6 @@ public class SmartPhoneMain {
 	
 	static void printMenu() {
 
-		System.out.println("----------------------------");
 		System.out.println("--------- 전화번호부 ----------");
 		System.out.println("1. 연락처 저장");
 		System.out.println("2. 연락처 검색");
