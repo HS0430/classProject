@@ -54,13 +54,14 @@ class Contact {
 	// 변수 값을 반환하는 각각의 메소드를 호출해서 각 데이터를 출력문으로 출력
 	public void showContactInfo() {
 		
-		System.out.println("연락처 정보 ------------");
+		System.out.println("--------- 연락처 정보 ---------");
 		System.out.println("이름 : " + this.name);
 		System.out.println("전화번호 : " + this.phoneNum);
 		System.out.println("E-mail : " + this.email);
 		System.out.println("주소 : " + this.address);
 		System.out.println("생일 : " + this.birthday);
 		System.out.println("그룹 : " + this.group);
+		System.out.println("----------------------------");
 
 	
 	}
