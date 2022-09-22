@@ -194,7 +194,6 @@ public class SmartPhone {
 				con[i].showContactInfo();
 			}
 		}
-		System.out.println("----------------------------");
 	}
 	
 }
