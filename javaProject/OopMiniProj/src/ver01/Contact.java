@@ -1,6 +1,6 @@
 package ver01;
 
-public class Contact {
+class Contact {
 
 	/*
 	 * 저장 정보  
