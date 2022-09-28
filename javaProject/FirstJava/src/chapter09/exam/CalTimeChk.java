@@ -1,7 +1,5 @@
 package chapter09.exam;
 
-import java.time.LocalTime;
-
 public class CalTimeChk {
 
 	public static void main(String[] args) {

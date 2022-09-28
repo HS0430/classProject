@@ -16,6 +16,7 @@ public class StringChk {
 			if (name != null && !name.isEmpty()) {
 				if (chkName(name)) {
 					System.out.println("입력된 이름 : " + name);
+					sc.close();
 					break;
 				} else {
 					System.out.println("이름에는 한글 또는 영문만 입력 가능합니다.");

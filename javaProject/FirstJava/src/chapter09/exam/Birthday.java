@@ -24,6 +24,8 @@ public class Birthday {
 
 		long days = ChronoUnit.DAYS.between(birthDay, now);
 		System.out.println("태어난 생일 기준 " + days + "일 째");
+		
+		sc.close();
 
 	}
 }
