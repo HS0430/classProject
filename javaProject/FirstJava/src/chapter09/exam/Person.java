@@ -27,8 +27,11 @@ public class Person {
 		Person p2 = new Person("이삼사", "901234-1234567");
 		Person p3 = new Person("삼사오", "901234-1234567");
 
-		System.out.println(p1.equals(p2)); // false
-		System.out.println(p2.equals(p3)); // true
+		System.out.println("Person1의 이름 : " + p1.name + " 번호 : " + p1.personNumber);
+		System.out.println("Person2의 이름 : " + p2.name + " 번호 : " + p2.personNumber);
+		System.out.println("Person3의 이름 : " + p3.name + " 번호 : " + p3.personNumber);
+		System.out.println("Person1 equals Person2 >> " + p1.equals(p2)); // false
+		System.out.println("Person1 equals Person3 >> " + p1.equals(p3)); // true
 
 	}
 }

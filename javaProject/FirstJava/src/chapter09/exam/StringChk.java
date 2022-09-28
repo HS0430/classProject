@@ -8,17 +8,23 @@ public class StringChk {
 	public static void main(String[] args) {
 
 		Scanner sc = new Scanner(System.in);
-		System.out.print("이름을 입력하세요 >> ");
-		String name = sc.nextLine();
-		if(name != null && !name.isEmpty()) {
-			if (chkName(name)) {
-				System.out.println("입력된 이름 : " + name);
+
+		while (true) {
+
+			System.out.print("이름을 입력하세요 >> ");
+			String name = sc.nextLine();
+			if (name != null && !name.isEmpty()) {
+				if (chkName(name)) {
+					System.out.println("입력된 이름 : " + name);
+					break;
+				} else {
+					System.out.println("이름에는 한글 또는 영문만 입력 가능합니다.");
+					System.out.println("다시 입력해주세요.");
+				}
 			} else {
-				System.out.println("이름에는 한글 또는 영문만 입력 가능합니다.");
+				System.out.println("이름이 입력되지 않았습니다.");
+				System.out.println("다시 입력해주세요.");
 			}
-		}
-		else {
-			System.out.println("이름이 입력되지 않았습니다.");
 		}
 	}
 

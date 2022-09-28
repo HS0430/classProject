@@ -20,7 +20,7 @@ public class CalTimeChk {
 
 		long checkTime = endTime - startTime;
 
-		System.out.println("실행 시간 : " + (double)checkTime/1000);
+		System.out.println("실행 시간 : " + (double) checkTime / 1000);
 		System.out.println("연산 결과 값 : " + sum);
 	}
 }
