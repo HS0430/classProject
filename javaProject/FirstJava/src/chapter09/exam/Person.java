@@ -11,9 +11,9 @@ public class Person {
 
 	@Override
 	public boolean equals(Object obj) {
-		if (obj instanceof Person) {
+		if (obj != null && obj instanceof Person) {
 			Person p = (Person) obj;
-			if (p != null && this.personNumber.equals(p.personNumber)) {
+			if (this.personNumber.equals(p.personNumber)) {
 				return true;
 			}
 		}
