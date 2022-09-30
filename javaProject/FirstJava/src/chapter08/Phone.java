@@ -10,7 +10,7 @@ public abstract class Phone {
 		this.power = false;
 	}
 
-	void call() {
+	public void call() {
 		System.out.println("전화 걸기!");
 	}
 
