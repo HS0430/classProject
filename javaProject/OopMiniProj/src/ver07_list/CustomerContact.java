@@ -1,4 +1,4 @@
-package ver07;
+package ver07_list;
 
 public class CustomerContact extends Contact{
 //	② CustomerContact 회사, 거래처의 정보를 저장하는 하위 클래스를 정의합니다.

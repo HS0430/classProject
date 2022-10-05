@@ -1,4 +1,4 @@
-package ver07;
+package ver07_list;
 
 // Contact 클래스의 용도 ? => 데이터 저장
 // 인스턴스 생성 -> 변수의 메모리 생성 -> 데이터 저장

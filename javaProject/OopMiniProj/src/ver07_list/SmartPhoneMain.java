@@ -1,4 +1,4 @@
-package ver07;
+package ver07_list;
 
 public class SmartPhoneMain {
 

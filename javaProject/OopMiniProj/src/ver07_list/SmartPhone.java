@@ -1,4 +1,4 @@
-package ver07;
+package ver07_list;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,12 +21,12 @@ public class SmartPhone {
 
 //	private Contact[] contacts;
 	List<Contact> contacts;
-	private int numOfContact; // 입력된 정보의 개수, 배열의 index 값으로 사용
+//	private int numOfContact; // 입력된 정보의 개수, 배열의 index 값으로 사용
 	Scanner sc;
 	
 	SmartPhone() {
 		contacts = new ArrayList<>();
-		numOfContact = 0;
+//		numOfContact = 0;
 		sc = new Scanner(System.in);
 	}
 
@@ -247,10 +247,7 @@ public class SmartPhone {
 		if (searchIndex < 0) {
 			System.out.println("삭제하고자 하는 이름의 데이터가 존재하지 않습니다.");
 		} else {
-			for (int i = searchIndex; i < numOfContact; i++) {
-				contacts.set(i, contacts.get(i+1));
-			}
-			numOfContact--;
+			contacts.remove(searchIndex);
 			System.out.println("데이터가 삭제 되었습니다.");
 		}
 	}
@@ -266,28 +263,27 @@ public class SmartPhone {
 		
 		int searchIndex = getIndex();
 
-		Contact	contact = contacts.get(searchIndex);
-
 		// 3. 결과 출력 : "검색한 이름의 정보가 없습니다." || 정보 출력
-		System.out.println("검색의 결과 ===============");
-		if (contact == null) {
+		if(searchIndex < 0 ) {
 			System.out.println("검색한 이름의 정보가 없습니다.");
-		} else {
+		}
+		else {
+			Contact	contact = contacts.get(searchIndex);
+			System.out.println("검색의 결과 ===============");
 			contact.printInfo();
 		}
-
 	}
 
 	// 전체 입력 데이터의 출력
 	void printAllData() {
 		System.out.println("전체 데이터를 출력합니다. ==============");
-		if (numOfContact == 0) {
+		if (contacts.size() == 0) {
 			System.out.println("입력된 정보가 없습니다.");
 			return;
 		}
 
 		// 배열에 저장된 데이터를 모두 출력
-		for (int i = 0; i < numOfContact; i++) {
+		for (int i = 0; i < contacts.size(); i++) {
 			contacts.get(i).printInfo();
 		}
 	}
@@ -314,10 +310,8 @@ public class SmartPhone {
 		// 이름 검색하는 index 찾기
 		int searchIndex = -1; // 현재 검색의 결과는 없다.
 		
-		
 		// 데이터 찾기
-		for (int i = 0; i < numOfContact; i++) {
-			System.out.println(contacts.get(i).getName());
+		for (int i = 0; i < contacts.size(); i++) {
 			if (contacts.get(i).getName().equals(name)) {
 				searchIndex = i;
 				break;
@@ -341,7 +335,7 @@ public class SmartPhone {
 					continue;
 				}
 				// 이름 검색
-				for(int i=0; i<numOfContact; i++) {
+				for(int i=0; i<contacts.size(); i++) {
 					if(name.equals(contacts.get(i).getName())) {
 						check = true;
 						break;
@@ -378,7 +372,7 @@ public class SmartPhone {
 				}
 				
 				// 전화번호로 검색
-				for(int i=0; i<numOfContact; i++) {
+				for(int i=0; i<contacts.size(); i++) {
 					if(phoneNumber.equals(contacts.get(i).getPhoneNumber())) {
 						check = true;
 						break;
