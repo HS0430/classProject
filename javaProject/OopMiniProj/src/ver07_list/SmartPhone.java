@@ -24,7 +24,7 @@ public class SmartPhone {
 //	private int numOfContact; // 입력된 정보의 개수, 배열의 index 값으로 사용
 	Scanner sc;
 	
-	SmartPhone() {
+	private SmartPhone() {
 		contacts = new ArrayList<>();
 //		numOfContact = 0;
 		sc = new Scanner(System.in);
