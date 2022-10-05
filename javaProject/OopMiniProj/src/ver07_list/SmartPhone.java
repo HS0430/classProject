@@ -145,13 +145,13 @@ public class SmartPhone {
 		System.out.println("데이터 수정을 진행 합니다.");
 
 		System.out.print("변경하고자 하는 이름을 입력해 주세요. (현재 값 : " + contact.getName() + ")\n" + "변경하지 않으려면 엔터를 치세요 >");
-		String newName = sc.nextLine();
+		String newName = getEditName();
 		if (newName != null && newName.trim().length() > 0) {
 			contact.setName(newName);
 		}
 
 		System.out.print("변경하고자 하는 전화번호를 입력해 주세요. (현재 값 : " + contact.getPhoneNumber() + ")\n" + "변경하지 않으려면 엔터를 치세요 >");
-		String newPhoneNumber = sc.nextLine();
+		String newPhoneNumber = getEditPhoneNumber();
 		if (newPhoneNumber != null && newPhoneNumber.trim().length() > 0) {
 			contact.setPhoneNumber(newPhoneNumber);
 		}
@@ -357,6 +357,37 @@ public class SmartPhone {
 		return name;
 	}
 	
+	private String getEditName() {
+		String name = null;
+		
+		while(true) {
+			name = sc.nextLine();
+				// 배열 요소에 같은 이름의 요소가 있는 지 체크
+				boolean check = false;
+				
+				if(!Pattern.matches("^[ㄱ-ㅎ가-힣|a-zA-Z]*$", name)){
+					System.out.println("한글과 영문자만 입력 가능 합니다. 다시 입력해주세요.");
+					continue;
+				}
+				// 이름 검색
+				for(int i=0; i<contacts.size(); i++) {
+					if(name.equals(contacts.get(i).getName())) {
+						check = true;
+						break;
+					}
+				}
+				if(check) {
+					System.out.println("같은 이름의 데이터가 존재 합니다.\n 다시 입력하세요.");
+					continue;
+				}
+				else {
+					break;
+				}
+		}
+		
+		return name;
+	}
+	
 	// 전화번호를 받아서 중복 여부 체크
 	private String getPhoneNumber() {
 		String phoneNumber = null;
@@ -389,6 +420,39 @@ public class SmartPhone {
 			else {
 				System.out.println("공백은 허용하지 않습니다. 정상적인 문자를 입력하세요.");
 			}
+		}
+		return phoneNumber;
+	}
+	
+	private String getEditPhoneNumber() {
+		String phoneNumber = null;
+		while(true) {
+			phoneNumber = sc.nextLine();
+				// 배열 요소에 같은 전화번호의 요소가 있는 지 체크
+				boolean check = false;
+				
+				if(phoneNumber == null || phoneNumber.equals("")) 
+					break;
+				
+				if(!Pattern.matches("\\d{3}-\\d{4}-\\d{4}", phoneNumber)){
+					System.out.println("010-1234-5678 형식의 숫자만 입력이 가능 합니다. 다시 입력해주세요.");
+					continue;
+				}
+				
+				// 전화번호로 검색
+				for(int i=0; i<contacts.size(); i++) {
+					if(phoneNumber.equals(contacts.get(i).getPhoneNumber())) {
+						check = true;
+						break;
+					}
+				}
+				if(check) {
+					System.out.println("같은 전화번호의 데이터가 존재 합니다.\n 다시 입력하세요.");
+					continue;
+				}
+				else {
+					break;
+				}
 		}
 		return phoneNumber;
 	}
