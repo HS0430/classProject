@@ -17,6 +17,7 @@ FROM customer;
 --(4) 2014년7월4일~7월7일사이에주문받은도서의주문번호
 SELECT orderid
 FROM ORDERS
+--WHERE orderdate BETWEEN '14/07/04' AND '14/07/07';
 WHERE orderdate >= '14/07/04' AND orderdate <= '14/07/07';
 
 --(5) 2014년7월4일~7월7일사이에주문받은도서를제외한도서의주문번호
