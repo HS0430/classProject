@@ -59,7 +59,7 @@ AND mgr is null;
 SELECT ename, sal, comm
 FROM emp
 WHERE comm IS NOT NULL AND comm != 0
-ORDER BY sal, comm ASC;
+ORDER BY sal, comm DESC;
 
 --12. 이름의 세번째 문자가 R인 사원의 이름을 표시하시오.
 SELECT ename
