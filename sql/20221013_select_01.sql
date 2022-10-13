@@ -34,7 +34,8 @@ AND e.deptno = d.deptno;
 SELECT ename, deptno
 FROM emp
 WHERE deptno = '20' OR deptno = '30'
-ORDER BY ename ASC;
+--WHERE DEPTNO IN(20, 30)
+ORDER BY ename DESC;
 ​
 --8. 사원의 급여가 2000에서 3000사이에 포함되고 부서번호가 20 또는 30인 사원의 이름, 급여와 부서번호를 출력, 이름순(오름차순)으로 출력하시오.
 SELECT ename, sal, deptno 
