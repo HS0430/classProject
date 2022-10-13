@@ -41,7 +41,8 @@ ORDER BY ename DESC;
 SELECT ename, sal, deptno 
 FROM emp
 WHERE (sal BETWEEN 2000 AND 3000) AND (deptno=20 OR deptno=30)
-ORDER BY ename DESC;
+--WHERE sal BETWEEN 2000 AND 3000 AND deptno IN(20, 30)
+ORDER BY ename ASC;
 ​
 --9. 1981년도에 입사한 사원의 이름과 입사일을 출력하시오. (like 연산자와 와일드카드 사용)
 SELECT ename, hiredate
@@ -74,7 +75,8 @@ WHERE ename like '%A%' AND ename like '%E%';
 SELECT ename, dname, sal, job
 FROM emp e, dept d
 WHERE e.deptno = d.deptno
-AND (sal != '1600' AND sal !='950' AND sal != '1300')
+--AND (sal != '1600' AND sal !='950' AND sal != '1300')
+AND sal NOT IN(1600, 950, 1300)
 AND (job ='CLERK' OR job='SALESMAN');
 
 --15. 커미션이 $500 이상인 사원의 이름과 급여 및 커미션을 출력하시오.
