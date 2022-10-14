@@ -47,9 +47,8 @@ FROM emp
 GROUP BY job;
 ​
 --26. 관리자 수를 출력하시오.
-SELECT COUNT(*)
-FROM emp
-WHERE job ='MANAGER';
+SELECT COUNT(mgr)
+FROM emp;
 
 --27. 급여 최고액, 급여 최저액의 차액을 출력하시오.
 SELECT MAX(sal)-MIN(sal)
@@ -92,11 +91,16 @@ GROUP BY deptno
 ORDER BY deptno;
 
 --31. 업무를 표시한 다음 해당 업무에 대해 부서 번호별 급여 및 부서 10, 20, 30의 급여 총액을 각각 출력하시오. 별칭은 각 job, dno, 부서 10, 부서 20, 부서 30, 총액으로 지정하시오. 
-SELECT job, deptno AS dno,
-SUM(DECODE(deptno, 10, sal)) AS 부서10,
-SUM(DECODE(deptno, 20, sal)) AS 부서20,
-SUM(DECODE(deptno, 30, sal)) AS 부서30,
-SUM(sal) AS 총액
+SELECT 
+    job, 
+    deptno AS dno,
+    SUM(DECODE(deptno, 10, sal)) AS 부서10,
+    --SUM(CASE WHEN deptno='10' THEN sal END) AS 부서10,
+    SUM(DECODE(deptno, 20, sal)) AS 부서20,
+    --SUM(CASE WHEN deptno='20' THEN sal END) AS 부서20,
+    SUM(DECODE(deptno, 30, sal)) AS 부서30,
+    --SUM(CASE WHEN deptno='30' THEN sal END) AS 부서30,
+    SUM(sal) AS 총액
 FROM emp
 GROUP BY job, deptno
 ORDER BY deptno;
