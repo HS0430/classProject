@@ -92,19 +92,11 @@ GROUP BY deptno
 ORDER BY deptno;
 
 --31. 업무를 표시한 다음 해당 업무에 대해 부서 번호별 급여 및 부서 10, 20, 30의 급여 총액을 각각 출력하시오. 별칭은 각 job, dno, 부서 10, 부서 20, 부서 30, 총액으로 지정하시오. 
-SELECT 
-SUM(DECODE(deptno, 10, sal)) AS dept10,
-SUM(DECODE(deptno, 20, sal)) AS dept20,
-SUM(DECODE(deptno, 30, sal)) AS dept30
+SELECT job, deptno AS dno,
+SUM(DECODE(deptno, 10, sal)) AS 부서10,
+SUM(DECODE(deptno, 20, sal)) AS 부서20,
+SUM(DECODE(deptno, 30, sal)) AS 부서30,
+SUM(sal) AS 총액
 FROM emp
-GROUP BY deptno;
-
-SELECT job, deptno, SUM(sal)
-FROM emp
-GROUP BY job;
-
+GROUP BY job, deptno
 ORDER BY deptno;
-
-SELECT * FROM emp;
-SELECT * FROM dept;
-( hint. Decode, group by )
