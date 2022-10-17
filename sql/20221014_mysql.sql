@@ -1,0 +1,32 @@
+SELECT DEPTNO, COUNT(*) AS "사원 수", ROUND(AVG(SAL)) AS "부서 평균 급여"
+FROM emp
+GROUP BY DEPTNO
+ORDER BY AVG(SAL);
+
+SELECT 
+(CASE deptno WHEN 10 THEN 'ACCOUNTING'
+			WHEN 20 THEN 'RESEARCH'
+            WHEN 30 THEN 'SALES'
+            WHEN 40 THEN 'OPERATIONS'
+END
+ ) AS DNAME,
+ (CASE deptno WHEN 10 THEN 'NEW YORK'
+			WHEN 20 THEN 'DALLAS'
+            WHEN 30 THEN 'CHICAGO'
+            WHEN 40 THEN 'BOSTON'
+END
+) AS LOC,
+COUNT(*) AS "사원 수", ROUND(AVG(SAL)) AS "부서 평균 급여"
+FROM emp
+GROUP BY DEPTNO
+ORDER BY AVG(SAL);
+
+SELECT JOB, DEPTNO,
+	   -- if(조건, true, false)
+       if(DEPTNO=10, SUM(SAL), null) AS "부서10",
+       if(DEPTNO=20, SUM(SAL), null) AS "부서20",
+       if(DEPTNO=30, SUM(SAL), null) AS "부서30",
+        SUM(SAL)
+FROM emp
+GROUP BY JOB, DEPTNO
+ORDER BY DEPTNO;
