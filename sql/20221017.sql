@@ -107,3 +107,63 @@ FROM orders o
 WHERE EXISTS (SELECT * FROM customer c WHERE c.custid = o.custid AND address like '%대한민국%');
 -- 대한민국의 거주하는 고객
 SELECT * FROM customer c, orders o WHERE c.custid = o.custid AND address like '%대한민국%';
+
+-- DDL : 정의어 => 객체를 정의하는 명령어
+-- 데이터의 저장공간 생성
+-- CREATE TABLE 테이블이름 (
+-- 컬럼이름 타입 (제약조건),
+-- 컬럼이름 타입 (제약조건),
+-- ...
+-- );
+
+CREATE TABLE ddl_test(
+    no NUMBER(3) NOT NULL unique,
+    name VARCHAR2(10),
+    birth DATE default SYSDATE
+);
+
+DESC emp;
+
+--사원 테이블과 유사한 구조의 사원번호, 사원이름, 급여 3개의 칼럼으로 구성된 EMP01 테이블을 생성해 봅시다.
+CREATE TABLE emp01
+(
+    empno NUMBER(4),
+    ename VARCHAR(10),
+    sal NUMBER(7, 2)
+);
+
+DESC emp01;
+
+INSERT INTO emp01 (empno, ename, sal) VALUES (1111, 'SON', 1000);
+SELECT * FROM emp01;
+
+-- AS : 서브쿼리를 이용해서 기존 테이블 구조로 생성, 데이터 저장, 제약 조건은 카피되지 않는다.
+CREATE TABLE emp02
+AS 
+SELECT * FROM emp;
+
+DESC emp02;
+SELECT * FROM emp02;
+
+-- 원하는 커럼만 카피해서 생성
+CREATE TABLE emp03
+AS 
+SELECT empno, ename, job, hiredate FROM emp;
+
+DESC emp03;
+SELECT * FROM emp03;
+
+CREATE TABLE emp04
+AS
+SELECT empno, ename, job FROM emp WHERE deptno=20;
+
+DESC emp04;
+SELECT * FROM emp04;
+
+-- 스키마만 복사한 테이블
+CREATE TABLE emp05
+AS 
+SELECT * FROM emp WHERE 1=0;
+
+DESC emp05;
+SELECT * FROM emp05;
