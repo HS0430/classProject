@@ -167,3 +167,151 @@ SELECT * FROM emp WHERE 1=0;
 
 DESC emp05;
 SELECT * FROM emp05;
+
+-- 테이블의 컬럼 수정
+-- ALTER TABLE 테이블 이름 ADD => 컬럼을 추가
+DESC emp01;
+-- job 컬럼을 추가
+ALTER TABLE emp01 ADD (job VARCHAR2(9));
+SELECT * FROM emp01;
+
+-- ALTER TABLE 테이블 이름 MODIFY => 컬럼을 수정
+ALTER TABLE emp01 MODIFY (job VARCHAR2(30) DEFAULT 'MANAGER');
+ALTER TABLE emp01 MODIFY (job NOT NULL);
+
+-- 컬럼의 이름 변경
+
+-- ALTER TABLE 테이블 이름 DROP => 컬럼을 삭제
+ALTER TABLE emp01 DROP COLUMN job;
+DESC emp01;
+
+-- 테이블 객체 삭제
+DROP TABLE emp01;
+DESC emp01;
+
+-- 테이블의 모든 행을 삭제 : 물리적 삭제
+TRUNCATE TABLE emp03;
+DESC emp03;
+SELECT * FROM emp03;
+
+-- 테이블의 이름 변경 : rename 기존테이블이름 to 새로운 이름
+RENAME emp03 to test03;
+DESC test03;
+SELECT * FROM test03;
+
+CREATE TABLE emp01
+(
+empno NUMBER(4),
+ename VARCHAR2(10),
+job VARCHAR(9),
+deptno NUMBER(2)
+);
+
+DROP TABLE emp01;
+
+CREATE TABLE emp01
+(
+empno NUMBER(4) NOT NULL,       -- NOT NULL 제약 조건은 컬럼 정의 위치에서 제약조건을 정의
+ename VARCHAR2(10) NOT NULL,
+job VARCHAR(9),
+deptno NUMBER(2)
+);
+
+INSERT INTO emp01 (job, deptno) VALUES('MANAGER', 20);
+INSERT INTO emp01 (empno, ename, job, deptno) VALUES(1111, 'KING', 'DEV', 10);
+INSERT INTO emp01 (empno, ename, job, deptno) VALUES(1112, 'KING', 'DEV', 60);
+INSERT INTO emp01 (empno, ename, job, deptno) VALUES(null, 'SON', 'MANAGER', 20);
+SELECT * FROM emp01;
+
+-- UNIQUE 제약 조건 정의
+CREATE TABLE emp01
+(
+empno NUMBER(4) NOT NULL UNIQUE,       -- NOT NULL 제약 조건은 컬럼 정의 위치에서 제약조건을 정의
+ename VARCHAR2(10) NOT NULL,
+job VARCHAR(9),
+deptno NUMBER(2)
+);
+
+-- 기본키 제약조건 정의
+CREATE TABLE emp01
+(
+empno NUMBER(4) PRIMARY KEY,       -- NOT NULL 제약 조건은 컬럼 정의 위치에서 제약조건을 정의
+ename VARCHAR2(10) NOT NULL,
+job VARCHAR(9),
+deptno NUMBER(2)
+);
+
+DESC emp01;
+
+-- 기본키 제약조건 정의 : 제약조건의 이름 등록
+CREATE TABLE emp01
+(
+empno NUMBER(4) CONSTRAINT emp01_empno_pk PRIMARY KEY,       -- NOT NULL 제약 조건은 컬럼 정의 위치에서 제약조건을 정의
+ename VARCHAR2(10) CONSTRAINT emp01_ename_NN NOT NULL,
+job VARCHAR(9) CONSTRAINT emp01_job_UK UNIQUE,
+deptno NUMBER(2)
+);
+
+SELECT * FROM emp01;
+
+-- 외래키 제약조건 정의
+CREATE TABLE emp01
+(
+empno NUMBER(4) CONSTRAINT emp01_empno_pk PRIMARY KEY,       -- NOT NULL 제약 조건은 컬럼 정의 위치에서 제약조건을 정의
+ename VARCHAR2(10) CONSTRAINT emp01_ename_NN NOT NULL,
+job VARCHAR(9) CONSTRAINT emp01_job_UK UNIQUE,
+deptno NUMBER(2) CONSTRAINT emp01_deptno_FK REFERENCES DEPT(deptno)
+);
+
+DESC emp01;
+
+-- CHECK 제약조건 정의
+CREATE TABLE emp01
+(
+empno NUMBER(4) CONSTRAINT emp01_empno_pk PRIMARY KEY,       -- NOT NULL 제약 조건은 컬럼 정의 위치에서 제약조건을 정의
+ename VARCHAR2(10) CONSTRAINT emp01_ename_NN NOT NULL,
+job VARCHAR(9) CONSTRAINT emp01_job_UK UNIQUE,
+sal NUMBER(7,2) CONSTRAINT emp01_sal_CK CHECK (sal BETWEEN 500 AND 5000), -- 500~5000
+gender CHAR(1) CONSTRAINT emp01_gender_CK CHECK (gender in ('M', 'F')), -- 남자 M, 여자 F
+deptno NUMBER(2) CONSTRAINT emp01_deptno_FK REFERENCES DEPT(deptno)
+);
+
+INSERT INTO emp01 VALUES(1111, 'SON', 'MANAGER', 100, 'A', 20);
+INSERT INTO emp01 VALUES(1111, 'SON', 'MANAGER', 500, 'M', 20);
+
+-- DEFAULT : null 값의 입력 시 기본으로 저장할 값을 정의
+-- CHECK 제약조건 정의
+CREATE TABLE emp01
+(
+empno NUMBER(4) CONSTRAINT emp01_empno_pk PRIMARY KEY,       -- NOT NULL 제약 조건은 컬럼 정의 위치에서 제약조건을 정의
+ename VARCHAR2(10) CONSTRAINT emp01_ename_NN NOT NULL,
+job VARCHAR(9) CONSTRAINT emp01_job_UK UNIQUE,
+sal NUMBER(7,2) CONSTRAINT emp01_sal_CK CHECK (sal BETWEEN 500 AND 5000), -- 500~5000
+gender CHAR(1) CONSTRAINT emp01_gender_CK CHECK (gender in ('M', 'F')), -- 남자 M, 여자 F
+deptno NUMBER(2) CONSTRAINT emp01_deptno_FK REFERENCES DEPT(deptno),
+hiredate DATE DEFAULT SYSDATE
+);
+
+INSERT INTO emp01(empno, ename, sal, gender, job, deptno) 
+VALUES(1111, 'KING', 5000, 'M', 'MANAGER', 10);
+
+SELECT * FROM emp01;
+
+DROP TABLE emp01;
+
+// DEFAULT가 없는 컬럼에 NULL 입력
+CREATE TABLE emp01
+(
+empno NUMBER(4) CONSTRAINT emp01_empno_pk PRIMARY KEY,       -- NOT NULL 제약 조건은 컬럼 정의 위치에서 제약조건을 정의
+ename VARCHAR2(10) CONSTRAINT emp01_ename_NN NOT NULL,
+job VARCHAR(9) CONSTRAINT emp01_job_UK UNIQUE,
+sal NUMBER(7,2) CONSTRAINT emp01_sal_CK CHECK (sal BETWEEN 500 AND 5000), -- 500~5000
+gender CHAR(1) CONSTRAINT emp01_gender_CK CHECK (gender in ('M', 'F')), -- 남자 M, 여자 F
+deptno NUMBER(2) CONSTRAINT emp01_deptno_FK REFERENCES DEPT(deptno),
+hiredate DATE DEFAULT SYSDATE
+);
+
+INSERT INTO emp01(empno, ename, sal, gender, job, deptno) 
+VALUES(1111, 'KING', 5000, 'M', 'MANAGER', 10);
+INSERT INTO emp01(empno, ename, sal, gender, job, deptno, hiredate) 
+VALUES(1111, 'KING', 5000, 'M', 'MANAGER', 10, SYSDATE);
