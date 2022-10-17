@@ -31,133 +31,62 @@ WHERE sal < ALL (SELECT sal FROM emp WHERE job ='ANALYST')
 AND job != 'ANALYST';
 
 --49. 부하직원이 없는 사원의 이름을 표시하시오.
-SELECT *
+SELECT ename
 FROM emp
-WHERE mgr IN(SELECT empno FROM emp);
-
-
-​
-
-​
-
-​
-
-​
-
-​
-
-50. 부하직원이 있는 사원의 이름을 표시하시오.
-
-
-​
-
-​
-
-​
-
-​
-
-51. BLAKE와 동일한 부서에 속한 사원의 이름과 입사일을 표시하는 질의를 작성하시오. ( 단 BLAKE는 제외 )
-
-
-​
-
-​
-
-​
-
-​
-
-52. 급여가 평균 급여보다 많은 사원들의 사원 번호와 이름을 표시하되 결과를 급여에 대해서 오름차순으로 정렬하시오.
-
-
-​
-
-​
-
-​
-
-​
-
-​
-
-53. 이름에 K가 포함된 사원과 같은 부서에서 일하는 사원의 사원 번호와 이름을 표시하시오.
-
-
-​
-
-​
-
-​
-
-​
-
-​
-
-54. 부서위치가 DALLAS인 사원의 이름과 부서번호 및 담당업무를 표시하시오.
-
-
-​
-
-​
-
-​
-
-​
-
-55. KING에게 보고하는 사원의 이름과 급여를 표시하시오.
-
-
-​
-
-​
-
-​
-
-​
-
-56. RESEARCH 부서의 사원에 대한 부서번호, 사원이름 및 담당 업무를 표시하시오.
-
-
-​
-
-​
-
-​
-
-​
-
-​
-
-57. 평균 월급보다 많은 급여를 받고 
-
-이름에 M이 포함된 사원과 같은 부서에서 근무하는 사원의 
-
-사원 번호, 이름, 급여를 표시하시오.
-
-
-​
-
-​
-
-​
-
-​
-
-​
-
-58. 평균급여가 가장 적은 업무를 찾으시오.
-
-
-​
-
-​
-
-​
-
-​
-
-​
-
-59. 담당업무가 MANAGER 인 사원이 소속된 부서와 동일한 부서의 사원을 표시하시오.
-
+WHERE empno NOT IN (SELECT NVL(mgr, 0) FROM emp);
+
+--50. 부하직원이 있는 사원의 이름을 표시하시오.
+SELECT ename
+FROM emp
+WHERE empno IN(SELECT DISTINCT(mgr) FROM emp);
+
+--51. BLAKE와 동일한 부서에 속한 사원의 이름과 입사일을 표시하는 질의를 작성하시오. ( 단 BLAKE는 제외 )
+SELECT ename, hiredate
+FROM emp
+WHERE deptno = (SELECT deptno FROM emp WHERE ename = 'BLAKE')
+AND ename != 'BLAKE';
+
+--52. 급여가 평균 급여보다 많은 사원들의 사원 번호와 이름을 표시하되 결과를 급여에 대해서 오름차순으로 정렬하시오.
+SELECT empno, ename, sal
+FROM emp
+WHERE sal > (SELECT AVG(sal) FROM emp)
+ORDER BY sal;
+
+--53. 이름에 K가 포함된 사원과 같은 부서에서 일하는 사원의 사원 번호와 이름을 표시하시오.
+SELECT empno, ename
+FROM emp
+WHERE deptno IN (SELECT deptno FROM emp WHERE ename like '%K%');
+
+--54. 부서위치가 DALLAS인 사원의 이름과 부서번호 및 담당업무를 표시하시오.
+SELECT ename, deptno, job
+FROM emp
+WHERE deptno = (SELECT deptno FROM dept WHERE loc = 'DALLAS');
+
+--55. KING에게 보고하는 사원의 이름과 급여를 표시하시오.
+SELECT ename, sal
+FROM emp
+WHERE mgr = (SELECT empno FROM emp WHERE ename ='KING');
+
+--56. RESEARCH 부서의 사원에 대한 부서번호, 사원이름 및 담당 업무를 표시하시오.
+SELECT deptno, ename, job
+FROM emp
+WHERE deptno = (SELECT deptno FROM dept WHERE dname ='RESEARCH');
+
+--57. 평균 월급보다 많은 급여를 받고 
+--이름에 M이 포함된 사원과 같은 부서에서 근무하는 사원의 
+--사원 번호, 이름, 급여를 표시하시오.
+SELECT empno, ename, sal
+FROM emp
+WHERE deptno IN (SELECT deptno FROM emp WHERE ename like '%M%')
+AND sal > (SELECT AVG(sal) FROM emp);
+
+--58. 평균급여가 가장 적은 업무를 찾으시오.
+SELECT job, AVG(sal)
+FROM emp
+GROUP BY job
+HAVING AVG(sal) = (SELECT MIN(AVG(sal)) FROM emp GROUP BY job);
+
+--59. 담당업무가 MANAGER 인 사원이 소속된 부서와 동일한 부서의 사원을 표시하시오.
+SELECT ename
+FROM emp
+WHERE deptno IN (SELECT deptno FROM emp WHERE job ='MANAGER');
