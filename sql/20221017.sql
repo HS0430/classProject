@@ -315,3 +315,41 @@ INSERT INTO emp01(empno, ename, sal, gender, job, deptno)
 VALUES(1111, 'KING', 5000, 'M', 'MANAGER', 10);
 INSERT INTO emp01(empno, ename, sal, gender, job, deptno, hiredate) 
 VALUES(1111, 'KING', 5000, 'M', 'MANAGER', 10, SYSDATE);
+
+-- 테이블 생성과 제약조건
+CREATE TABLE emp01
+(
+empno NUMBER(4) CONSTRAINT emp01_empno_pk PRIMARY KEY,       -- NOT NULL 제약 조건은 컬럼 정의 위치에서 제약조건을 정의
+ename VARCHAR2(10) CONSTRAINT emp01_ename_NN NOT NULL,
+job VARCHAR(9) CONSTRAINT emp01_job_UK UNIQUE,
+sal NUMBER(7,2) CONSTRAINT emp01_sal_CK CHECK (sal BETWEEN 500 AND 5000), -- 500~5000
+gender CHAR(1) CONSTRAINT emp01_gender_CK CHECK (gender in ('M', 'F')), -- 남자 M, 여자 F
+deptno NUMBER(2) CONSTRAINT emp01_deptno_FK REFERENCES DEPT(deptno),
+hiredate DATE DEFAULT SYSDATE
+);
+
+INSERT INTO emp01 (empno, ename, sal, job, gender, deptno) 
+            VALUES(1111, 'KING', 5000, '대표', 'M', 10); 
+            
+DROP TABLE emp02;
+
+CREATE TABLE emp02
+(
+    empno NUMBER(4),       -- NOT NULL 제약 조건은 컬럼 정의 위치에서 제약조건을 정의
+    ename VARCHAR2(10) CONSTRAINT emp02_ename_NN NOT NULL,
+    job VARCHAR(9),
+    sal NUMBER(7,2), -- 500~5000
+    gender CHAR(1), -- 남자 M, 여자 F
+    deptno NUMBER(2),
+    hiredate DATE DEFAULT SYSDATE,
+    CONSTRAINT emp02_empno_pk primary key (empno),
+    CONSTRAINT emp02_job_uk unique(job),
+    CONSTRAINT emp02_sal_ck CHECK (sal BETWEEN 500 AND 5000),
+    CONSTRAINT emp02_gender_ck CHECK (gender in ('M', 'F')),
+    CONSTRAINT emp02_deptno_fk foreign key (deptno) REFERENCES dept(deptno)
+);
+
+INSERT INTO emp02 (empno, ename, sal, job, gender, deptno) 
+            VALUES(1112, 'KING', 1500, '대표2', 'F', 90); 
+            
+            
