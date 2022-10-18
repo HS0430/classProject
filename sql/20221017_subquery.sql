@@ -3,10 +3,20 @@ SELECT ename, job
 FROM emp
 WHERE job=(SELECT job FROM emp WHERE empno='7788');
 
+SELECT e1.ename, e1.job, e1.empno, e2.ename, e2.job, e2.empno
+FROM emp e1, emp e2
+WHERE e1.job = e2.job 
+AND e2.empno ='7788';
+
 --44. 사원번호가 7499인 사원보다 급여가 많은 사원을 표시하시오. 사원이름과 감당 업무
 SELECT ename, job
 FROM emp
 WHERE sal > (SELECT sal FROM emp WHERE empno='7499');
+
+SELECT e1.ename, e1.job
+FROM emp e1, emp e2
+WHERE e1.sal > e2.sal
+AND e2.empno='7499';
 
 --45. 최소급여를 받는 사원의 이름, 담당업무 및 급여를 표시하시오. (그룹함수 사용)
 SELECT ename, job, sal
@@ -22,7 +32,16 @@ HAVING AVG(sal) = (SELECT MIN(AVG(sal)) FROM emp GROUP BY job);
 --47. 각 부서의 최소 급여를 받는 사원의 이름, 급여, 부서번호를 표시하시오.
 SELECT ename, sal, deptno
 FROM emp
-WHERE sal IN (SELECT MIN(sal) FROM emp GROUP BY deptno) ;
+WHERE sal IN (SELECT MIN(sal) FROM emp GROUP BY deptno);
+
+SELECT e1.ename, e1.sal, e1.deptno
+FROM emp e1, (
+                SELECT deptno, MIN(sal) AS sal
+                FROM emp
+                GROUP BY deptno
+            ) e2
+WHERE e1.deptno = e2.deptno
+AND e1.sal IN e2.sal;
 
 --48. 담당업무가 ANALYST 인 사원보다 급여가 적으면서 업무가 ANALYST가 아닌 사원들을 표시(사원번호, 이름, 담당 업무, 급여)하시오.
 SELECT empno, ename, job, sal
@@ -35,16 +54,34 @@ SELECT ename
 FROM emp
 WHERE empno NOT IN (SELECT NVL(mgr, 0) FROM emp);
 
+SELECT *
+FROM emp
+WHERE empno NOT IN (
+                SELECT DISTINCT(mgr) 
+                FROM emp 
+                WHERE mgr IS NOT NULL
+);
+
+
 --50. 부하직원이 있는 사원의 이름을 표시하시오.
 SELECT ename
 FROM emp
 WHERE empno IN(SELECT DISTINCT(mgr) FROM emp);
+
+SELECT *
+FROM emp
+WHERE empno IN (
+                SELECT DISTINCT(mgr) 
+                FROM emp 
+                WHERE mgr IS NOT NULL
+);
 
 --51. BLAKE와 동일한 부서에 속한 사원의 이름과 입사일을 표시하는 질의를 작성하시오. ( 단 BLAKE는 제외 )
 SELECT ename, hiredate
 FROM emp
 WHERE deptno = (SELECT deptno FROM emp WHERE ename = 'BLAKE')
 AND ename != 'BLAKE';
+--AND ename <> 'BLAKE';
 
 --52. 급여가 평균 급여보다 많은 사원들의 사원 번호와 이름을 표시하되 결과를 급여에 대해서 오름차순으로 정렬하시오.
 SELECT empno, ename, sal
@@ -55,12 +92,17 @@ ORDER BY sal;
 --53. 이름에 K가 포함된 사원과 같은 부서에서 일하는 사원의 사원 번호와 이름을 표시하시오.
 SELECT empno, ename
 FROM emp
-WHERE deptno IN (SELECT deptno FROM emp WHERE ename like '%K%');
+WHERE deptno IN (SELECT DISTINCT(deptno) FROM emp WHERE ename like '%K%');
 
 --54. 부서위치가 DALLAS인 사원의 이름과 부서번호 및 담당업무를 표시하시오.
 SELECT ename, deptno, job
 FROM emp
 WHERE deptno = (SELECT deptno FROM dept WHERE loc = 'DALLAS');
+
+SELECT e.ename, e.deptno, e.job
+FROM emp e, dept d
+WHERE e.deptno = d.deptno
+AND loc = 'DALLAS';
 
 --55. KING에게 보고하는 사원의 이름과 급여를 표시하시오.
 SELECT ename, sal
