@@ -1,6 +1,18 @@
 package dept;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
+
+import dept.controller.Controller;
+import dept.controller.DeleteController;
+import dept.controller.ExitController;
+import dept.controller.InsertController;
+import dept.controller.SelectByController;
+import dept.controller.SelectController;
+import dept.controller.UpdateController;
 
 public class Main {
 
@@ -10,36 +22,32 @@ public class Main {
 		// TODO Auto-generated method stub
 
 //		Controller controller = new Controller();
+		Command command = new Command();
+		
+//		List<Controller> list = new ArrayList<>();
+//		list.add(null);
+//		list.add(new SelectController());
+//		list.add(new SelectByController());
+//		list.add(new InsertController());
+//		list.add(new UpdateController());
+//		list.add(new DeleteController());
+//		list.add(new ExitController());
+//
+//		Map<Integer, Controller> cmd = new HashMap<>();
+//		cmd.put(1, new SelectController());
+//		cmd.put(2, new SelectByController());
+//		cmd.put(3, new InsertController());
+//		cmd.put(4, new UpdateController());
+//		cmd.put(5, new DeleteController());
+//		cmd.put(6, new ExitController());
 		
 		while(true) {
 			menu();
 			System.out.print("메뉴를 입력하세요	>> ");
-//			int select = Integer.parseInt(controller.sc.nextLine());
 			int select = Integer.parseInt(sc.nextLine());
 			
-			switch(select) {
-			case 1:
-				new SelectController().process();
-//				controller.select();
-				break;
-			case 2:
-				new SelectByController().process();
-//				controller.selectByDeptno();
-				break;
-			case 3:
-//				controller.insert();
-				break;
-			case 4:
-//				controller.update();
-				break;
-			case 5:
-//				controller.delete();
-				break;
-			case 6:
-//				controller.exit();
-				break;
-			
-			}
+			command.cmd.get(select).process();
+//			cmd.get(select).process();
 			
 		}
 	}

@@ -1,12 +1,13 @@
-package dept;
+package dept.controller;
 
 import java.util.List;
 
+import dept.Main;
 import dept.domain.Dept;
 import dept.service.SelectByService;
 import dept.service.SelectService;
 
-public class SelectByController {
+public class SelectByController implements Controller{
 	
 	SelectByService service = new SelectByService();
 		
@@ -16,7 +17,7 @@ public class SelectByController {
 		// 부서 전체 리스트를 출력
 		// List<Dept>
 		
-		System.out.println("검색 부서 번호 >> ");
+		System.out.print("검색 부서 번호 >> ");
 		int deptno = Integer.parseInt(Main.sc.nextLine());
 		
 		Dept dept = service.selectByDeptno(deptno);
