@@ -1,11 +1,11 @@
-DROP INDEX SCOTT.PK_member;
+DROP INDEX ONE.PK_member;
 
 /* member */
-DROP TABLE SCOTT.member 
+DROP TABLE ONE.member 
 	CASCADE CONSTRAINTS;
 
 /* member */
-CREATE TABLE SCOTT.member (
+CREATE TABLE ONE.member (
 	memberNo INTEGER NOT NULL, /* memberNo */
 	memberName VARCHAR2(50), /* memberName */
 	memberAddres VARCHAR2(255), /* memberAddres */
@@ -15,28 +15,28 @@ CREATE TABLE SCOTT.member (
 	memberGrade INTEGER /* memberGrade */
 );
 
-COMMENT ON TABLE SCOTT.member IS 'member';
+COMMENT ON TABLE ONE.member IS 'member';
 
-COMMENT ON COLUMN SCOTT.member.memberNo IS 'memberNo';
+COMMENT ON COLUMN ONE.member.memberNo IS 'memberNo';
 
-COMMENT ON COLUMN SCOTT.member.memberName IS 'memberName';
+COMMENT ON COLUMN ONE.member.memberName IS 'memberName';
 
-COMMENT ON COLUMN SCOTT.member.memberAddres IS 'memberAddres';
+COMMENT ON COLUMN ONE.member.memberAddres IS 'memberAddres';
 
-COMMENT ON COLUMN SCOTT.member.memberPhone IS 'memberPhone';
+COMMENT ON COLUMN ONE.member.memberPhone IS 'memberPhone';
 
-COMMENT ON COLUMN SCOTT.member.memberId IS 'memberId';
+COMMENT ON COLUMN ONE.member.memberId IS 'memberId';
 
-COMMENT ON COLUMN SCOTT.member.memberPwd IS 'memberPwd';
+COMMENT ON COLUMN ONE.member.memberPwd IS 'memberPwd';
 
-COMMENT ON COLUMN SCOTT.member.memberGrade IS 'memberGrade';
+COMMENT ON COLUMN ONE.member.memberGrade IS 'memberGrade';
 
-CREATE UNIQUE INDEX SCOTT.PK_member
-	ON SCOTT.member (
+CREATE UNIQUE INDEX ONE.PK_member
+	ON ONE.member (
 		memberNo ASC
 	);
 
-ALTER TABLE SCOTT.member
+ALTER TABLE ONE.member
 	ADD
 		CONSTRAINT PK_member
 		PRIMARY KEY (
