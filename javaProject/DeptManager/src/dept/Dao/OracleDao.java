@@ -108,7 +108,7 @@ public class OracleDao implements Dao {
 		
 		int result = 0;
 		PreparedStatement pstmt = null;
-		String sql = "UPDATE dept SET dname = ?, loc = ? WHERE deptno =?";
+		String sql = "UPDATE dept SET dname = ?, loc = ? WHERE deptno =";
 		
 		try {
 			pstmt = conn.prepareStatement(sql);
@@ -118,6 +118,7 @@ public class OracleDao implements Dao {
 			pstmt.setInt(3, dept.getDeptno());
 			
 			result = pstmt.executeUpdate();
+			
 		}finally {
 			if(pstmt != null) {
 				pstmt.close();

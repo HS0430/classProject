@@ -4,5 +4,4 @@ public interface Controller {
 
 	void process();
 
-
 }
