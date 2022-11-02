@@ -15,7 +15,7 @@ body{
 #imgdiv{
     padding-top: 10%;
     padding-bottom: 15%;
-    width: 45%;
+    width: 50%;
     height: 60%;
     
     float: left;
@@ -32,7 +32,7 @@ body{
 #logindiv{
     padding-top: 10%;
     padding-bottom: 15%;
-    width: 45%;
+    width: 50%;
     height: 60%;
 
     float: right;
@@ -40,56 +40,67 @@ body{
 
 #loginform{
     background-color: white;
-    width: 80%;
+    width: 60%;
     height: 100%;
     border-radius: 5%;
     text-align: center;
     margin: 1%;
     padding-top: 1%;
     padding-bottom: 1%;
+    box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
 }
 #id_div{
     padding: 6px 0;
 }
 #id_text{
-    width: 330px;
+    width: 85%;
     margin-bottom: 2%;
     font-size: 18px;
-    padding: 14px 16px;
+    padding: 3% 3%;
+    border: 1px solid #dddfe2;
+    border-radius: 6px;
 }
 #pwd_div{
     padding: 6px 0;
 }
 #pwd_text{
-    width: 330px;
+    width: 85%;
     margin-bottom: 2%;
     font-size: 18px;
-    padding: 14px 16px;
+    padding: 3% 3%;
+    border: 1px solid #dddfe2;
+    border-radius: 6px;
 }
 #login_btn{
-    width: 330px;
+    width: 90%;
     margin-bottom: 2%;
     background-color: #1877f2;
     color: white;
     border: none;
     border-radius: 6px;
     font-size: 20px;
-    padding: 0 16px;
+    padding: 3% 3%;
+    margin-bottom: 3%;
 }
 
 #forgotpwd{
     font-size: small;
+    margin-bottom: 3%;
 }
 
 #bd_line{
-    border-bottom: 1px solid #aaa;
+    width: 100%;
+    border-bottom: 1px solid #dddfe2;
 }
 
 #new_btn{
+    width: 35%;
     background-color: #42b72a;
     color: white;
     border: none;
     border-radius: 6px;
-    font-size: 20px;
-    padding: 0 16px;
+    font-size: 100%;
+    padding: 3% 3%;
+    margin-top: 5%;
+    margin-bottom: 5%;
 }
