@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', () =>{
+            cnt = document.querySelector('#cnt');
+            const textarea = document.querySelector('textarea');
+            textarea.addEventListener('keyup', listener);
+
+            const select = document.querySelector('select');
+            const pMsg = document.querySelector('#selectMsg');
+
+            select.addEventListener('change', (event) => {
+                const options = event.currentTarget.options;
+                // console.log(options);
+                const index = event.currentTarget.options.selectedIndex;
+                // console.log(index);
+                let msg = `select : ${options[index].textContent}`;
+                console.log(msg);
+
+                pMsg.textContent = msg;
+
+            })
+        });
+
+        let cnt;
+
+const listener = function(event){
+    const length = event.currentTarget.value.length;
+    console.log(event.currentTarget.value);
+    cnt.textContent = `글자 수 : ${length}`;
+}
+    </script>
+</head>
+<body>
+    <select>
+        <option>JAVA</option>
+        <option>SQL</option>
+        <option>HTML5</option>
+        <option>CSS</option>
+        <option>JavaScript</option>
+    </select>
+    <p id="selectMsg"></p>
+
+    <hr>
+
+    <h4>키보드 이벤트</h4>
+    <textarea></textarea>
+    <h4 id="cnt"></h4>
+</body>
+</html>
