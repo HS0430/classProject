@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
+        // 캐스팅 > 리스너 > 이벤트 타입 > 이벤트객체.currTarget
         document.addEventListener('DOMContentLoaded', () =>{
             cnt = document.querySelector('#cnt');
             const textarea = document.querySelector('textarea');
@@ -25,6 +26,20 @@
                 pMsg.textContent = msg;
 
             })
+
+            /////////////////////////////////////////////////////
+            // radio : checked
+            const rMsg = document.querySelector('#checkedMsg');
+            const radios = document.querySelectorAll('input[name=lang]');
+
+            radios.forEach((radio) => {
+                radio.addEventListener('change', (event) => {
+                    const currentRadio = event.currentTarget;
+                    if(currentRadio.checked){
+                        rMsg.textContent = `checked : ${currentRadio.value}`;
+                    }
+                })
+            })
         });
 
         let cnt;
@@ -37,12 +52,22 @@ const listener = function(event){
     </script>
 </head>
 <body>
+    <h3>관심 있는 언어를 선택하세요.</h3>
+    <input type="radio" name="lang" value="JAVA">JAVA<br>
+    <input type="radio" name="lang" value="SQL">SQL<br>
+    <input type="radio" name="lang" value="HTML5">HTML5<br>
+    <input type="radio" name="lang" value="CSS">CSS<br>
+    <input type="radio" name="lang" value="JavaScript">JavaScript<br>
+    <p id="checkedMsg"></p>
+
+    <hr>
+
     <select>
-        <option>JAVA</option>
-        <option>SQL</option>
-        <option>HTML5</option>
-        <option>CSS</option>
-        <option>JavaScript</option>
+        <option value="JAVA">JAVA</option>
+        <option value="SQL">SQL</option>
+        <option value="HTML5">HTML5</option>
+        <option value="CSS">CSS</option>
+        <option value="JavaScript">JavaScript</option>
     </select>
     <p id="selectMsg"></p>
 
