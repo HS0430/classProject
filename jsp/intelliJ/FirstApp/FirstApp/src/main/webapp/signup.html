@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="post" action="/SignupServlet">
+    아이디<input type="text" id="userId" name="userId"><br>
+    패스워드<input type="password" id="userPwd" name="userPwd"><br>
+    이름<input type="text" id="userName" name="userName"><br>
+    소개글<textarea name="memo" cols="30" rows="5"></textarea><br>
+    성별 : 남자<input type="radio" name="gender" value="남자"> 여자<input type="radio" name="gender" value="여자"><br>
+    언어 선택 :
+    JAVA <input type="checkbox" name="Lang" value="java">
+    HTML <input type="checkbox" name="Lang" value="HTML">
+    JSP <input type="checkbox" name="Lang" value="JSP"><br>
+    YEAR <select name="year">
+        <option value="2023">2023</option>
+        <option value="2022">2022</option>
+    </select>
+    <button>전송</button>
+</form>
+</body>
+</html>
