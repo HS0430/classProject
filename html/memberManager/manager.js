@@ -121,13 +121,33 @@ document.addEventListener('DOMContentLoaded', ()=> {
         let editPopBtn = document.querySelector(`#editPopBtn${jsonData.index}`);
         editPopBtn.addEventListener('click', ()=>{
             let popDiv = document.getElementById('editFormArea');
-            console.log(popDiv);
             popDiv.style.display ='block';
             const index = document.getElementById('index');
             const editId = document.getElementById('editId');
             index.value = jsonData.index;
             editId.value = jsonData.id;
         });
+
+        let editBtn = document.querySelector('#editBtn');
+        editBtn.addEventListener('click', (event) =>{
+            let id = document.getElementById('editId').value;
+            let pwd = document.getElementById('editPw').value;
+            let rePwd = document.getElementById('editRePw').value;
+            let name = document.getElementById('editName').value;
+            let index = document.getElementById('index').value;
+            let arr2 = {
+                index:index, 
+                id:id, 
+                pwd:pwd, 
+                name:name
+                };
+            if(id!=null && pwd!=null && name!=null){
+                localStorage.setItem('member'+index, JSON.stringify(arr2))
+            }
+            else{
+                alert("입력이 필요합니다.")
+            }
+        })
     });
 
 
@@ -226,3 +246,8 @@ document.addEventListener('DOMContentLoaded', ()=> {
     
     // editPopBtn.addEventListener('click', editMember)
 });
+
+function editMemberClose(){
+    console.log("pop");
+    document.getElementById('editFormArea').style.display = 'none';
+}
