@@ -8,6 +8,7 @@
     <title>회원관리 프로그램</title>
     <!-- <link rel="stylesheet" href="default.css"> -->
     <script src="manager.js"></script>
+    <link rel="stylesheet" href="manager.css">
 </head>
 
 <body>
@@ -74,7 +75,8 @@
     </div>
     <!-- 회원 리스트 끝 -->
 
-    <div id="editFormArea">
+    <div id="editFormArea" style="display: none;">
+        <div id="editBox">
         <div id="div_header">
             <h2 class="title_font">회원 정보 수정</h2>
             <div> <a href="javascript:editMemberClose()">닫기</a> </div>
@@ -106,11 +108,7 @@
                 </tr>
             </table>
         </form>
+        </div>
     </div>
-
-
-
-
 </body>
-
 </html>
