@@ -1,5 +1,7 @@
 package com.firstcoding.todo.controller;
 
+import com.firstcoding.todo.service.TodoService;
+
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
@@ -10,17 +12,14 @@ public class TodoListController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        System.out.println("list get()");
+        System.out.println("todo List ...");
 
-        // 데이터 처리
-
+        // 출력 결과
+//        String title = "Todo List";
+        request.setAttribute("title", "Todo List");
+        request.setAttribute("todoList", new TodoService().getTodoList());
 
         RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/todo/list.jsp");
         dispatcher.forward(request, response);
     }
-
-//    @Override
-//    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//
-//    }
 }

@@ -10,17 +10,32 @@
 <html>
 <head>
   <title>Todo List</title>
+  <style>
+    td{
+      padding: 10px;
+      text-align: center;
+    }
+  </style>
 </head>
 <body>
-<h1>Tdo List</h1>
-
-<ul>
-  <c:forEach var="num" begin="1" end="10">
-    <li> <a href="/todo/read?tno=${num}">${num}</a> Todo 제목 2022-11-10 done</li>
+<h1>${title}</h1>
+<table border="1">
+  <tr>
+    <td>번호</td>
+    <td>할일</td>
+    <td>기간</td>
+    <td>완료여부</td>
+  </tr>
+  <c:forEach var="todo" items="${todoList}">
+  <tr>
+    <td>${todo.tno}</td>
+    <td><a href="/todo/read?tno=${todo.tno}">${todo.todo}</a></td>
+    <td>${todo.dueDate}</td>
+    <td>${todo.finished ? '완료' : '진행중'}</td>
+  </tr>
   </c:forEach>
-</ul>
-
-<a href="/todo/register"> ToDo 등록 </a>
+</table>
+<a href="/todo/register">Todo 등록하기</a>
 
 </body>
 </html>

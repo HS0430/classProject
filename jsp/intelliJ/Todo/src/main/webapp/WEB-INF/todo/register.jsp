@@ -20,9 +20,22 @@
 <h1>Todo Register</h1>
 
 <form method="post">
-  할일 <input type="text" name="todo" id="todo" placeholder="할일 제목을 입력하세요!"> <br>
-  마감 <input type="date" name="date" id="date"> <br>
-  <input type="reset"> <input type="submit" value="등록">
+  <table>
+    <tr>
+      <td>할일</td>
+      <td><input type="text" name="todo"></td>
+    </tr>
+    <tr>
+      <td>기한</td>
+      <td><input type="date" name="dueDate"></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><input type="reset">
+          <input type="submit" value="register">
+      </td>
+    </tr>
+  </table>
 </form>
 
 </body>
