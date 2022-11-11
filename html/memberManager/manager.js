@@ -1,7 +1,8 @@
+let jsonData;
 document.addEventListener('DOMContentLoaded', ()=> {
     let a;
     if(localStorage.length ==0){
-        a = 0;
+        a = 1;
     }
     else {
         a = localStorage.length;
@@ -17,7 +18,7 @@ document.addEventListener('DOMContentLoaded', ()=> {
     const divPwd = document.querySelector('#pwdMsg');
     const divRePwd = document.querySelector('#rePwdMsg');
     const divName = document.querySelector('#userNameMsg');
-    let jsonData;
+    
     if(localStorage.length == 0){
         const list = document.querySelector('#list');
         let tr = document.createElement(`tr`);
@@ -26,7 +27,7 @@ document.addEventListener('DOMContentLoaded', ()=> {
         `<td colspan=5>입력된 데이터가 없습니다.</td>`;
         list.append(tr);
     }else{
-        for(let i=1; i<=localStorage.length; i++){
+        for(i=1; i<=localStorage.length; i++){
             jsonData = JSON.parse(localStorage.getItem('member'+i));
             
             if(jsonData){
