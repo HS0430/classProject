@@ -10,36 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="828b01f3-0119-488d-99ca-0e62d55982fc" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FirstApp/src/main/java/com/firstcoding/firstapp/TestListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FirstApp/src/main/java/com/firstcoding/firstapp/cookie/CookieCreateServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FirstApp/src/main/java/com/firstcoding/firstapp/filter/LoginCheckFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FirstApp/src/main/java/com/firstcoding/firstapp/filter/UTF8Filter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FirstApp/src/main/java/com/firstcoding/firstapp/login/LoginController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FirstApp/src/main/java/com/firstcoding/firstapp/login/LogoutController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FirstApp/src/main/java/com/firstcoding/firstapp/login/controller/MemberRegController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FirstApp/src/main/java/com/firstcoding/firstapp/login/dao/MemberDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FirstApp/src/main/java/com/firstcoding/firstapp/login/dao/MemberDaoImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FirstApp/src/main/java/com/firstcoding/firstapp/login/domain/Member.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FirstApp/src/main/java/com/firstcoding/firstapp/login/service/MemberService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FirstApp/src/main/java/com/firstcoding/firstapp/mypage/MyInfoController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FirstApp/src/main/java/com/firstcoding/firstapp/mypage/MyPageController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FirstApp/src/main/java/com/firstcoding/firstapp/util/ConnectionProvider.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FirstApp/src/main/java/com/firstcoding/firstapp/util/ConnectionUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FirstApp/src/main/resources/log4j2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FirstApp/src/main/webapp/WEB-INF/views/cookie/create.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FirstApp/src/main/webapp/WEB-INF/views/cookie/delete.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FirstApp/src/main/webapp/WEB-INF/views/cookie/view.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FirstApp/src/main/webapp/WEB-INF/views/login/loginform.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FirstApp/src/main/webapp/WEB-INF/views/member/regform.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FirstApp/src/main/webapp/WEB-INF/views/mypage/mypage.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FirstApp/src/main/webapp/fileupload.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FirstApp/src/main/java/com/firstcoding/firstapp/cookie/CookieSearchServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/FirstApp/src/main/java/com/firstcoding/firstapp/cookie/CookieSearchServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FirstApp/src/main/java/com/firstcoding/firstapp/cookie/CookieServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/FirstApp/src/main/java/com/firstcoding/firstapp/cookie/CookieViewServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FirstApp/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/FirstApp/src/main/webapp/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FirstApp/src/main/webapp/views/cookie/search.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/FirstApp/src/main/webapp/WEB-INF/views/cookie/search.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Todo/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../Todo/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FirstApp/src/main/java/com/firstcoding/firstapp/login/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/FirstApp/src/main/java/com/firstcoding/firstapp/login/LoginController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -312,7 +283,7 @@
       <workItem from="1668474328935" duration="652000" />
       <workItem from="1668474999826" duration="431000" />
       <workItem from="1668475440482" duration="1156000" />
-      <workItem from="1668476710314" duration="20687000" />
+      <workItem from="1668476710314" duration="20934000" />
     </task>
     <servers />
   </component>
