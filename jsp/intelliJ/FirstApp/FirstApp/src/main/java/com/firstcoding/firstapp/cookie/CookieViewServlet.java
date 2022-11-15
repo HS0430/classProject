@@ -7,26 +7,19 @@ import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
 
-@WebServlet(name = "CookieSearchServlet", value = "/cookie/search")
+@WebServlet(name = "CookieServlet", value = "/cookie/view")
 @Log4j2
-public class CookieSearchServlet extends HttpServlet {
+public class CookieViewServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String cookieName = request.getParameter("cname");
-        String value = "";
-
+        // Cookie 확인
         Cookie[] cookies = request.getCookies();
-        for(int i=0; i<cookies.length; i++){
-            Cookie c = cookies[i];
-            if(cookieName.equals(c.getValue())){
-                value = c.getValue();
-                break;
-            }
+
+        for (Cookie c : cookies) {
+            log.info(c.getName() + " = " + c.getValue());
         }
 
-        request.setAttribute("result", value);
-
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/views/cookie/search.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/views/cookie/view.jsp");
         dispatcher.forward(request, response);
     }
 

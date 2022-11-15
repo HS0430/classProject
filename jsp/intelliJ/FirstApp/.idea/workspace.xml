@@ -1,26 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="FirstApp.FirstApp:war exploded" />
+    </artifacts-to-build>
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="828b01f3-0119-488d-99ca-0e62d55982fc" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/modules/FirstApp.FirstApp.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FirstApp/src/main/java/com/firstcoding/firstapp/cookie/CookieSearchServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FirstApp/src/main/webapp/WEB-INF/doc/JDBC정리.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FirstApp/src/main/webapp/WEB-INF/views/dept/list.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FirstApp/src/main/webapp/views/cookie/search.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Todo/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FirstApp/src/main/java/com/firstcoding/firstapp/TestListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FirstApp/src/main/java/com/firstcoding/firstapp/cookie/CookieCreateServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FirstApp/src/main/java/com/firstcoding/firstapp/filter/LoginCheckFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FirstApp/src/main/java/com/firstcoding/firstapp/filter/UTF8Filter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FirstApp/src/main/java/com/firstcoding/firstapp/login/LoginController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FirstApp/src/main/java/com/firstcoding/firstapp/login/LogoutController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FirstApp/src/main/java/com/firstcoding/firstapp/login/controller/MemberRegController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FirstApp/src/main/java/com/firstcoding/firstapp/login/dao/MemberDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FirstApp/src/main/java/com/firstcoding/firstapp/login/dao/MemberDaoImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FirstApp/src/main/java/com/firstcoding/firstapp/login/domain/Member.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FirstApp/src/main/java/com/firstcoding/firstapp/login/service/MemberService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FirstApp/src/main/java/com/firstcoding/firstapp/mypage/MyInfoController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FirstApp/src/main/java/com/firstcoding/firstapp/mypage/MyPageController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FirstApp/src/main/java/com/firstcoding/firstapp/util/ConnectionProvider.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FirstApp/src/main/java/com/firstcoding/firstapp/util/ConnectionUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FirstApp/src/main/resources/log4j2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FirstApp/src/main/webapp/WEB-INF/views/cookie/create.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FirstApp/src/main/webapp/WEB-INF/views/cookie/delete.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FirstApp/src/main/webapp/WEB-INF/views/cookie/view.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FirstApp/src/main/webapp/WEB-INF/views/login/loginform.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FirstApp/src/main/webapp/WEB-INF/views/member/regform.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FirstApp/src/main/webapp/WEB-INF/views/mypage/mypage.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FirstApp/src/main/webapp/fileupload.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FirstApp/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/FirstApp/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Todo/src/main/java/com/firstcoding/todo/controller/TodoListController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Todo/src/main/java/com/firstcoding/todo/controller/TodoListController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Todo/src/main/java/com/firstcoding/todo/controller/TodoModifyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Todo/src/main/java/com/firstcoding/todo/controller/TodoModifyController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Todo/src/main/java/com/firstcoding/todo/controller/TodoReadController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Todo/src/main/java/com/firstcoding/todo/controller/TodoReadController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Todo/src/main/java/com/firstcoding/todo/controller/TodoRegisterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Todo/src/main/java/com/firstcoding/todo/controller/TodoRegisterController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Todo/src/main/java/com/firstcoding/todo/controller/TodoRemoveController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Todo/src/main/java/com/firstcoding/todo/controller/TodoRemoveController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Todo/src/main/java/com/firstcoding/todo/domain/TodoDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Todo/src/main/java/com/firstcoding/todo/domain/OldTodoDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Todo/src/main/java/com/firstcoding/todo/service/TodoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Todo/src/main/java/com/firstcoding/todo/service/TodoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Todo/src/main/java/com/firstcoding/todo/util/ConnectionProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Todo/src/main/java/com/firstcoding/todo/util/ConnectionProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FirstApp/src/main/java/com/firstcoding/firstapp/cookie/CookieSearchServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/FirstApp/src/main/java/com/firstcoding/firstapp/cookie/CookieSearchServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FirstApp/src/main/java/com/firstcoding/firstapp/cookie/CookieServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/FirstApp/src/main/java/com/firstcoding/firstapp/cookie/CookieViewServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FirstApp/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/FirstApp/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FirstApp/src/main/webapp/views/cookie/search.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/FirstApp/src/main/webapp/WEB-INF/views/cookie/search.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Todo/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../Todo/build.gradle" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,6 +72,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="HTML File" />
         <option value="Jsp File" />
       </list>
     </option>
@@ -74,40 +94,53 @@
     <option name="selectedTabId" value="ProjectErrors" />
   </component>
   <component name="ProjectId" id="2HNbEHwdx4qgDufqPsyC5JHU2qO" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/cheoho-hi/Documents/GitHub/classProject/jsp/intelliJ/FirstApp/FirstApp/src/main/java/com/firstcoding/firstapp/cookie",
+    "last_opened_file_path": "C:/Users/cheoho-hi/Documents/GitHub/classProject/jsp/intelliJ/FirstApp/FirstApp/src/main/resources",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "SDKs",
+    "project.structure.last.edited": "Artifacts",
     "project.structure.proportion": "0.14453125",
     "project.structure.side.proportion": "0.2"
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.firstcoding.firstapp.login.dao" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\cheoho-hi\Documents\GitHub\classProject\jsp\intelliJ\FirstApp\FirstApp\src\main\resources" />
+      <recent name="C:\Users\cheoho-hi\Documents\GitHub\classProject\jsp\intelliJ\FirstApp\FirstApp\src\main\webapp\WEB-INF\views" />
       <recent name="C:\Users\cheoho-hi\Documents\GitHub\classProject\jsp\intelliJ\FirstApp\FirstApp\src\main\java\com\firstcoding\firstapp\cookie" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.firstcoding.firstapp.mypage" />
     </key>
   </component>
   <component name="RunManager">
     <configuration name="Tomcat 9.0.68" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.68" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="17 (2)" nameIsGenerated="true">
+      <option name="COMMON_VM_ARGUMENTS" value="-Dfile.encoding=UTF-8 -Dconsole.encoding=UTF-8" />
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
-        <file path="$PROJECT_DIR$/FirstApp/src/main/webapp">
+        <artifact name="Gradle : com.firstcoding : FirstApp-1.0-SNAPSHOT.war (exploded)">
           <settings>
             <option name="CONTEXT_PATH" value="/" />
           </settings>
-        </file>
+        </artifact>
       </deployment>
       <server-settings>
         <option name="BASE_DIRECTORY_NAME" value="1dec521f-94bc-4e0d-8f74-61d140803bcd" />
@@ -180,7 +213,11 @@
           <option name="PROGRAM_PARAMETERS" value="" />
         </SHUTDOWN>
       </ConfigurationWrapper>
-      <method v="2" />
+      <method v="2">
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="Gradle : com.firstcoding : FirstApp-1.0-SNAPSHOT.war (exploded)" />
+        </option>
+      </method>
     </configuration>
     <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" ALTERNATIVE_JRE_ENABLED="false">
       <deployment />
@@ -275,7 +312,7 @@
       <workItem from="1668474328935" duration="652000" />
       <workItem from="1668474999826" duration="431000" />
       <workItem from="1668475440482" duration="1156000" />
-      <workItem from="1668476710314" duration="1957000" />
+      <workItem from="1668476710314" duration="20687000" />
     </task>
     <servers />
   </component>

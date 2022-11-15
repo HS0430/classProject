@@ -1,15 +1,17 @@
-package com.firstcoding.firstapp.cookie;
+package com.firstcoding.firstapp.login;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
 
-@WebServlet(name = "CookieServlet", value = "/CookieServlet")
-public class CookieServlet extends HttpServlet {
+@WebServlet(name = "LogoutController", value = "/logout")
+public class LogoutController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+        request.getSession().invalidate();
+        response.sendRedirect("/index.jsp");
     }
 
     @Override
