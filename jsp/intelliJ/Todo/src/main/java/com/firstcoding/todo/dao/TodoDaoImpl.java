@@ -2,12 +2,14 @@ package com.firstcoding.todo.dao;
 
 import com.firstcoding.todo.domain.TodoDTO;
 import lombok.Cleanup;
+import lombok.extern.log4j.Log4j2;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+@Log4j2
 public class TodoDaoImpl implements TodoDao {
 
     @Override
@@ -86,6 +88,7 @@ public class TodoDaoImpl implements TodoDao {
     public int updateTodo(Connection conn, TodoDTO dto) throws SQLException {
 
         int result = 0;
+        log.info("todo update ...");
         String sql = "update tbl_todo set todo=?, duedate=?, finished=? where tno=?";
         @Cleanup PreparedStatement pstmt = conn.prepareStatement(sql);
         pstmt.setString(1, dto.getTodo());

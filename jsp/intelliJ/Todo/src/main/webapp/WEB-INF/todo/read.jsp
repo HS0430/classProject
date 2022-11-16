@@ -36,6 +36,6 @@
     <td><input type="checkbox" name="finished" ${todo.finished ? 'checked' : ''}></td>
   </tr>
 </table>
-<a href="/todo/modify?tno=${param.tno}">Modify / Remove</a> <a href="/todo/list">Todo List</a>
+<a href="/todo/modify?tno=${param.tno}">Modify & Remove</a> <a href="/todo/list">Todo List</a>
 </body>
 </html>
