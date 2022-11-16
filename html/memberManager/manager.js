@@ -1,11 +1,13 @@
 let jsonData;
+let a = 0;
+
 document.addEventListener('DOMContentLoaded', ()=> {
-    let a;
-    if(localStorage.length ==0){
-        a = 1;
+    
+    if(localStorage.length > 0){
+        a = localStorage.length;
     }
     else {
-        a = localStorage.length;
+        a = 0;
     }
     const regForm = document.querySelector('#regForm');
     const userId = document.querySelector('#userID');
@@ -40,8 +42,8 @@ document.addEventListener('DOMContentLoaded', ()=> {
                 <td>${jsonData.pwd}</td>
                 <td>${jsonData.name}</td>
                 <td>
-                    <input type=button class="rmBtn" id="rmBtn${jsonData.index}" value="삭제">
-                    <input type=button class="editPopBtn" id="editPopBtn${jsonData.index}" value="수정">
+                    <input type=button class="rmBtn" id="rmBtn${jsonData.index}" value="삭제" onclick="remove(${jsonData.index})">
+                    <input type=button class="editPopBtn" id="editPopBtn${jsonData.index}" value="수정" onclick="modifyPop(${jsonData.index}, ${jsonData.id})">
                 </td>`;
                 list.append(tr);
             }
@@ -49,7 +51,7 @@ document.addEventListener('DOMContentLoaded', ()=> {
     }
     // localStorage.getItem('member');
     submitBtn.addEventListener('click', (event) =>{
-        ++a
+        a++
         event.preventDefault();
         const spanCnt = document.querySelectorAll('span');
         const list = document.querySelector('#list');
@@ -99,56 +101,57 @@ document.addEventListener('DOMContentLoaded', ()=> {
         <td>${jsonData.pwd}</td>
         <td>${jsonData.name}</td>
         <td>
-            <input type=button class="rmBtn" id="rmBtn${jsonData.index}" value="삭제">
-            <input type=button class="editPopBtn" id="editPopBtn${jsonData.index}" value="수정">
+            <input type=button class="rmBtn" id="rmBtn${jsonData.index}" value="삭제" onclick="remove(${jsonData.index})">
+            <input type=button class="editPopBtn" id="editPopBtn${jsonData.index}" value="수정" onclick="modifyPop(${jsonData.index}, ${jsonData.id})">
         </td>`;
 
         list.append(tr);
         
-        let rmBtn = document.querySelector(`#rmBtn${jsonData.index}`);
-        rmBtn.addEventListener('click', ()=>{
-            localStorage.removeItem('member'+jsonData.index);
-            document.getElementById(`m${jsonData.index}`).remove();
-            if(localStorage.length==0){
-                const list = document.querySelector('#list');
-                let tr = document.createElement(`tr`);
-                tr.setAttribute('id', 'm');
-                tr.innerHTML =
-                `<td colspan=5>입력된 데이터가 없습니다.</td>`;
-                list.append(tr);
-            }
-        });
+        // let rmBtn = document.querySelector(`#rmBtn${jsonData.index}`);
+        // rmBtn.addEventListener('click', ()=>{
+        //     localStorage.removeItem('member'+jsonData.index);
+        //     document.getElementById(`m${jsonData.index}`).remove();
+        //     if(localStorage.length==0){
+        //         const list = document.querySelector('#list');
+        //         let tr = document.createElement(`tr`);
+        //         tr.setAttribute('id', 'm');
+        //         tr.innerHTML =
+        //         `<td colspan=5>입력된 데이터가 없습니다.</td>`;
+        //         list.append(tr);
+        //     }
+        // });
     
-        let editPopBtn = document.querySelector(`#editPopBtn${jsonData.index}`);
-        editPopBtn.addEventListener('click', ()=>{
-            let popDiv = document.getElementById('editFormArea');
-            popDiv.style.display ='block';
-            const index = document.getElementById('index');
-            const editId = document.getElementById('editId');
-            index.value = jsonData.index;
-            editId.value = jsonData.id;
-        });
+        // let editPopBtn = document.querySelector(`#editPopBtn${jsonData.index}`);
+        // editPopBtn.addEventListener('click', ()=>{
+        //     let popDiv = document.getElementById('editFormArea');
+        //     popDiv.style.display ='block';
+        //     const index = document.getElementById('index');
+        //     const editId = document.getElementById('editId');
+        //     index.value = jsonData.index;
+        //     editId.value = jsonData.id;
+        // });
 
-        let editBtn = document.querySelector('#editBtn');
-        editBtn.addEventListener('click', (event) =>{
-            let id = document.getElementById('editId').value;
-            let pwd = document.getElementById('editPw').value;
-            let rePwd = document.getElementById('editRePw').value;
-            let name = document.getElementById('editName').value;
-            let index = document.getElementById('index').value;
-            let arr2 = {
-                index:index, 
-                id:id, 
-                pwd:pwd, 
-                name:name
-                };
-            if(id!=null && pwd!=null && name!=null){
-                localStorage.setItem('member'+index, JSON.stringify(arr2))
-            }
-            else{
-                alert("입력이 필요합니다.")
-            }
-        })
+    });
+
+    let editBtn = document.querySelector('#editBtn');
+    editBtn.addEventListener('click', (event) =>{
+        let id = document.getElementById('editId').value;
+        let pwd = document.getElementById('editPw').value;
+        let rePwd = document.getElementById('editRePw').value;
+        let name = document.getElementById('editName').value;
+        let index = document.getElementById('index').value;
+        let arr2 = {
+            index:index, 
+            id:id, 
+            pwd:pwd, 
+            name:name
+            };
+        if(id!=null && pwd!=null && name!=null){
+            localStorage.setItem('member'+index, JSON.stringify(arr2))
+        }
+        else{
+            alert("입력이 필요합니다.")
+        }
     });
 
 
@@ -247,6 +250,49 @@ document.addEventListener('DOMContentLoaded', ()=> {
     
     // editPopBtn.addEventListener('click', editMember)
 });
+
+function remove(idx) {
+    localStorage.removeItem('member'+idx);
+    document.getElementById('m'+idx).remove();
+    if(localStorage.length==0){
+        const list = document.querySelector('#list');
+        let tr = document.createElement(`tr`);
+        tr.setAttribute('id', 'm');
+        tr.innerHTML =
+        `<td colspan=5>입력된 데이터가 없습니다.</td>`;
+        list.append(tr);
+        a = 0;
+    }
+}
+
+// function modify(){
+//     let id = document.getElementById('editId').value;
+//     let pwd = document.getElementById('editPw').value;
+//     let rePwd = document.getElementById('editRePw').value;
+//     let name = document.getElementById('editName').value;
+//     let index = document.getElementById('index').value;
+//     let arr = {
+//         index:index, 
+//         id:id, 
+//         pwd:pwd, 
+//         name:name
+//         };
+//     if(id!=null && pwd!=null && name!=null){
+//         localStorage.setItem('member'+idx, JSON.stringify(arr))
+//     }
+//     else{
+//         alert("입력이 필요합니다.")
+//     }
+// }
+
+function modifyPop(idx, id){
+    let popDiv = document.getElementById('editFormArea');
+    popDiv.style.display ='block';
+    const index = document.getElementById('index');
+    const editId = document.getElementById('editId');
+    index.value = idx;
+    editId.value = id;
+}
 
 function editMemberClose(){
     console.log("pop");

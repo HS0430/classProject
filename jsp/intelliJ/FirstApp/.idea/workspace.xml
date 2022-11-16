@@ -11,9 +11,6 @@
   <component name="ChangeListManager">
     <list default="true" id="828b01f3-0119-488d-99ca-0e62d55982fc" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Todo/src/main/java/com/firstcoding/todo/dao/TodoDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Todo/src/main/java/com/firstcoding/todo/dao/TodoDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Todo/src/main/java/com/firstcoding/todo/util/ConnectionProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Todo/src/main/java/com/firstcoding/todo/util/ConnectionProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Todo/src/main/webapp/WEB-INF/todo/read.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../Todo/src/main/webapp/WEB-INF/todo/read.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -287,7 +284,8 @@
       <workItem from="1668474999826" duration="431000" />
       <workItem from="1668475440482" duration="1156000" />
       <workItem from="1668476710314" duration="21433000" />
-      <workItem from="1668559103947" duration="613000" />
+      <workItem from="1668559103947" duration="1579000" />
+      <workItem from="1668565542059" duration="232000" />
     </task>
     <servers />
   </component>
