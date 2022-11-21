@@ -30,9 +30,8 @@ public class TodoInsertController {
     }
 
     @PostMapping
-    public ModelAndView insertTodo(@RequestParam("todo") String todo, @RequestParam("dueDate") String dueDate){
+    public String insertTodo(@RequestParam("todo") String todo, @RequestParam("dueDate") String dueDate){
         log.info("Todo insert...");
-        ModelAndView mav = new ModelAndView();
 
         Todo_Spring todoDto = Todo_Spring.builder()
                 .todo(todo)
@@ -40,10 +39,8 @@ public class TodoInsertController {
                 .build();
 
         int result = service.insertTodo(todoDto);
-//        mav.addObject("todoList", TodoService.getInstance().selectTodoList());
-        mav.setViewName("list");
 
-        return mav;
+        return "redirect:list";
 
     }
 }

@@ -56,5 +56,41 @@ public class TodoDaoImpl implements TodoDao {
         return result;
     }
 
+    @Override
+    public Todo_Spring selectByTno(Connection conn, long tno) throws SQLException {
+
+        @Cleanup PreparedStatement pstmt = conn.prepareStatement("Select * from tbl_todo where tno=?");
+        pstmt.setLong(1, tno);
+        @Cleanup ResultSet rs = pstmt.executeQuery();
+
+        Todo_Spring todoDTO = null;
+
+        if(rs.next()){
+            todoDTO = new Todo_Spring(
+                    rs.getLong(1),
+                    rs.getString(2),
+                    rs.getDate(3).toLocalDate(),
+                    rs.getBoolean(4)
+                    );
+        }
+
+        return todoDTO;
+    }
+
+    @Override
+    public int updateTodo(Connection conn, Todo_Spring dto) throws SQLException {
+        int result = 0;
+        log.info("todo update ...");
+        String sql = "update tbl_todo set todo=?, duedate=?, finished=? where tno=?";
+        @Cleanup PreparedStatement pstmt = conn.prepareStatement(sql);
+        pstmt.setString(1, dto.getTodo());
+        pstmt.setDate(2, Date.valueOf(dto.getDueDate()));
+        pstmt.setBoolean(3, dto.isFinished());
+        pstmt.setLong(4, dto.getTno());
+        result = pstmt.executeUpdate();
+
+        return result;
+    }
+
 
 }

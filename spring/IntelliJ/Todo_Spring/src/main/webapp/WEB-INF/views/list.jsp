@@ -31,7 +31,7 @@
                 <c:forEach var="list" items="${todoList}">
                 <tr>
                     <td>${list.tno}</td>
-                    <td>${list.todo}</td>
+                    <td><a href="/modify">${list.todo}</a></td>
                     <td>${list.dueDate}</td>
                     <td>${list.finished ? ' 완료' : '진행중'}</td>
                 </tr>
@@ -39,5 +39,7 @@
             </c:otherwise>
         </c:choose>
     </table>
+<a href="/insert">등록</a>
+
 </body>
 </html>

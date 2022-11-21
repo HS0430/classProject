@@ -1,0 +1,43 @@
+package com.firstcoding.todo_spring.controller;
+
+import com.firstcoding.todo_spring.domain.Todo_Spring;
+import com.firstcoding.todo_spring.service.TodoService;
+import lombok.extern.log4j.Log4j2;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import java.time.LocalDate;
+
+@Log4j2
+@Controller
+public class TodoModifyController {
+    @Autowired
+    private TodoService todoService;
+
+    @GetMapping
+    public String getModifyForm(Model model, @RequestParam("tno") int tno){
+
+        model.addAttribute("todo", todoService.getTodo(tno));
+
+        return "todo/modify";
+    }
+
+    @PostMapping
+    public String modify(@RequestParam("tno") int tno,
+                         @RequestParam("todo") String todo,
+                         @RequestParam("dueDate") String dueDate,
+                         @RequestParam(value = "finished", required = false) String finished
+    )
+    {
+        Todo_Spring todoDTO = new Todo_Spring(tno, todo, LocalDate.parse(dueDate), finished ==  null ? false : true);
+        log.info("todoDTO => " + todoDTO);
+
+        todoService.modify(todoDTO);
+
+        return "redirect:/todo/list";
+    }
+}

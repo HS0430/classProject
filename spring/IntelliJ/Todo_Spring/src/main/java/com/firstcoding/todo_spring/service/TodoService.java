@@ -43,4 +43,32 @@ public class TodoService {
         return result;
     }
 
+    public Todo_Spring getTodo(long tno) {
+        Todo_Spring todoDTO = null;
+        try {
+            @Cleanup Connection conn = ConnectionProvider.getInstance().getConnection();
+            todoDTO = dao.selectByTno(conn, tno);
+            log.info(todoDTO);
+        } catch (Exception e) {
+            e.printStackTrace();
+            // 예외 발생 시 -> 빈 List 생성
+            todoDTO = new Todo_Spring();
+        }
+        return todoDTO;
+    }
+
+    public int modify(Todo_Spring todoDTO) {
+        int result = 0;
+
+        try {
+            @Cleanup Connection conn = ConnectionProvider.getInstance().getConnection();
+            result = dao.updateTodo(conn, todoDTO);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return result;
+    }
+
 }
