@@ -6,23 +6,18 @@ import com.firstcoding.todo_spring.domain.Todo_Spring;
 import com.firstcoding.todo_spring.util.ConnectionProvider;
 import lombok.Cleanup;
 import lombok.extern.log4j.Log4j2;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.sql.Connection;
 import java.util.List;
 
 @Log4j2
+@Service
 public class TodoService {
-    private final TodoDao dao;
 
-    static private TodoService instance = new TodoService(new TodoDaoImpl());
-
-    private TodoService(TodoDao dao){
-        this.dao = dao;
-    }
-
-    public static TodoService getInstance(){
-        return instance;
-    }
+    @Autowired
+    private TodoDao dao;
 
     public List<Todo_Spring> selectTodoList(){
         List<Todo_Spring> list = null;

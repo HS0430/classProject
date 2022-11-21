@@ -3,6 +3,7 @@ package com.firstcoding.todo_spring.dao;
 import com.firstcoding.todo_spring.domain.Todo_Spring;
 import lombok.Cleanup;
 import lombok.extern.log4j.Log4j2;
+import org.springframework.stereotype.Repository;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -10,6 +11,7 @@ import java.util.Collections;
 import java.util.List;
 
 @Log4j2
+@Repository
 public class TodoDaoImpl implements TodoDao {
 
     @Override

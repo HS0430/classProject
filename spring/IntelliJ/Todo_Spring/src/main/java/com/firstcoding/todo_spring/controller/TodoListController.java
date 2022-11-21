@@ -2,6 +2,7 @@ package com.firstcoding.todo_spring.controller;
 
 import com.firstcoding.todo_spring.service.TodoService;
 import lombok.extern.log4j.Log4j2;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,6 +16,9 @@ import javax.servlet.http.HttpServletResponse;
 @Log4j2
 public class TodoListController {
 
+    @Autowired
+    private TodoService service;
+
     @GetMapping
     public ModelAndView getList(HttpServletRequest req, HttpServletResponse resp){
         log.info("Todo List Get ...");
@@ -23,7 +27,7 @@ public class TodoListController {
 //        req.setAttribute("todoList", TodoListService.getInstance().selectTodoList();
         ModelAndView mav = new ModelAndView();
 
-        mav.addObject("todoList", TodoService.getInstance().selectTodoList());
+        mav.addObject("todoList", service.selectTodoList());
         mav.setViewName("list");
 
         return mav;

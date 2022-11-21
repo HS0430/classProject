@@ -30,7 +30,8 @@ public class LoginController {
                         @RequestParam(value = "p", defaultValue = "1") String page,
                         HttpServletRequest request,
                         HttpServletResponse response,
-                        @ModelAttribute("req") LoginRequest loginRequest
+                        @ModelAttribute("req") LoginRequest loginRequest,
+                        @RequestHeader("referer") String referer
                         ){
         String uid2 = request.getParameter("uid");
         String pw2 = request.getParameter("pw");
@@ -43,7 +44,10 @@ public class LoginController {
         log.info("pw2 : " + pw2);
         log.info("loginRequest : " + loginRequest);
 
-        return "login/login";   // "redirect/index"
+        request.getSession().setAttribute("loginInfo", uid);
+
+//        return "login/login";   // "redirect/index"
+        return "redirect:/mypage/mypage1";
     }
 
     @GetMapping("/info")    // http://localhost:8080/login/info
