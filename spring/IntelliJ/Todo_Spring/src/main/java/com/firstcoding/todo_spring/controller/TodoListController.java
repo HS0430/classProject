@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @Controller
-@RequestMapping("/list")
+@RequestMapping("/todo/list")
 @Log4j2
 public class TodoListController {
 
@@ -28,7 +28,7 @@ public class TodoListController {
         ModelAndView mav = new ModelAndView();
 
         mav.addObject("todoList", service.selectTodoList());
-        mav.setViewName("list");
+        mav.setViewName("todo/list");
 
         return mav;
 

@@ -37,5 +37,9 @@
     </tr>
   </table>
 </form>
+<form action="/todo/remove" method="post">
+  <input type="hidden" name="tno" value="${param.tno}">
+  <input type="submit" value="Remove">
+</form>
 </body>
 </html>

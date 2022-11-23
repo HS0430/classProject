@@ -21,21 +21,17 @@ public class TodoDaoImpl implements TodoDao {
         @Cleanup PreparedStatement pstmt = conn.prepareStatement(sql);
         @Cleanup ResultSet rs = pstmt.executeQuery();
 
-        if (rs.next()){
-            list = new ArrayList<>();
-            do {
-                list.add(
-                        Todo_Spring.builder()
-                                .tno(rs.getLong(1))
-                                .todo(rs.getString(2))
-                                .dueDate(rs.getDate(3).toLocalDate())
-                                .finished(rs.getBoolean(4))
-                                .build()
-                );
-            } while (rs.next());
-        } else {
-            // 비어 있는 리스트 생성 : null 값으로 반화할 경우 상황에 따라 null 비교하는 구문이 필요!!
-            list = Collections.emptyList();;
+
+        list = new ArrayList<>();
+        while (rs.next()) {
+            list.add(
+                    Todo_Spring.builder()
+                            .tno(rs.getLong(1))
+                            .todo(rs.getString(2))
+                            .dueDate(rs.getDate(3).toLocalDate())
+                            .finished(rs.getBoolean(4))
+                            .build()
+            );
         }
 
         log.info(list);
@@ -59,7 +55,7 @@ public class TodoDaoImpl implements TodoDao {
     @Override
     public Todo_Spring selectByTno(Connection conn, long tno) throws SQLException {
 
-        @Cleanup PreparedStatement pstmt = conn.prepareStatement("Select * from tbl_todo where tno=?");
+        @Cleanup PreparedStatement pstmt = conn.prepareStatement("SELECT * FROM tbl_todo WHERE tno=?");
         pstmt.setLong(1, tno);
         @Cleanup ResultSet rs = pstmt.executeQuery();
 
@@ -81,12 +77,29 @@ public class TodoDaoImpl implements TodoDao {
     public int updateTodo(Connection conn, Todo_Spring dto) throws SQLException {
         int result = 0;
         log.info("todo update ...");
-        String sql = "update tbl_todo set todo=?, duedate=?, finished=? where tno=?";
+        String sql = "UPDATE tbl_todo SET todo=?, duedate=?, finished=? WHERE tno=?";
+
         @Cleanup PreparedStatement pstmt = conn.prepareStatement(sql);
+
         pstmt.setString(1, dto.getTodo());
         pstmt.setDate(2, Date.valueOf(dto.getDueDate()));
         pstmt.setBoolean(3, dto.isFinished());
         pstmt.setLong(4, dto.getTno());
+
+        result = pstmt.executeUpdate();
+
+        return result;
+    }
+
+    @Override
+    public int deleteTodo(Connection conn, long tno) throws SQLException {
+        int result = 0;
+        log.info("todo delete ...");
+        String sql = "DELETE FROM tbl_todo WHERE tno=?";
+        @Cleanup PreparedStatement pstmt = conn.prepareStatement(sql);
+
+        pstmt.setLong(1, tno);
+
         result = pstmt.executeUpdate();
 
         return result;

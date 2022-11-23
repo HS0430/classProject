@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.time.LocalDate;
 
 @Controller
-@RequestMapping("/insert")
+@RequestMapping("/todo/insert")
 @Log4j2
 public class TodoInsertController {
 
@@ -26,7 +26,7 @@ public class TodoInsertController {
     @GetMapping
     public String insertForm(){
 
-        return "insert";
+        return "todo/insert";
     }
 
     @PostMapping
@@ -40,7 +40,7 @@ public class TodoInsertController {
 
         int result = service.insertTodo(todoDto);
 
-        return "redirect:list";
+        return "redirect:/todo/list";
 
     }
 }

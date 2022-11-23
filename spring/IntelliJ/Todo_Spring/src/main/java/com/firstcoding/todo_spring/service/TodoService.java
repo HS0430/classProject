@@ -57,13 +57,26 @@ public class TodoService {
         return todoDTO;
     }
 
-    public int modify(Todo_Spring todoDTO) {
+    public int modifyTodo(Todo_Spring todoDTO) {
         int result = 0;
 
         try {
             @Cleanup Connection conn = ConnectionProvider.getInstance().getConnection();
             result = dao.updateTodo(conn, todoDTO);
 
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return result;
+    }
+
+    public int deleteTodo(long tno){
+        int result = 0;
+
+        try {
+            Connection conn = ConnectionProvider.getInstance().getConnection();
+            result = dao.deleteTodo(conn, tno);
         } catch (Exception e) {
             e.printStackTrace();
         }

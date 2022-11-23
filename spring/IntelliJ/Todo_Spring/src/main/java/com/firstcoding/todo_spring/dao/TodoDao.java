@@ -14,5 +14,7 @@ public interface TodoDao {
 
     int updateTodo(Connection conn, Todo_Spring dto) throws SQLException;
 
+    int deleteTodo(Connection conn, long tno) throws SQLException;
+
 
 }

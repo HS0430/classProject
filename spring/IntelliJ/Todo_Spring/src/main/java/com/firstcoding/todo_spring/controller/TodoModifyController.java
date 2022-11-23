@@ -8,12 +8,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.time.LocalDate;
 
 @Log4j2
 @Controller
+@RequestMapping("/todo/modify")
 public class TodoModifyController {
     @Autowired
     private TodoService todoService;
@@ -36,7 +38,7 @@ public class TodoModifyController {
         Todo_Spring todoDTO = new Todo_Spring(tno, todo, LocalDate.parse(dueDate), finished ==  null ? false : true);
         log.info("todoDTO => " + todoDTO);
 
-        todoService.modify(todoDTO);
+        todoService.modifyTodo(todoDTO);
 
         return "redirect:/todo/list";
     }
