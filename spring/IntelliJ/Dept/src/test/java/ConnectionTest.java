@@ -1,4 +1,5 @@
 import com.app.manager.domain.DeptDTO;
+import com.app.manager.domain.DeptSearchOption;
 import com.app.manager.mapper.DeptMapper;
 import com.app.manager.mapper.TimeMapper;
 import lombok.extern.log4j.Log4j2;
@@ -10,8 +11,11 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import javax.sql.DataSource;
+import java.sql.Array;
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 @Log4j2
 @ExtendWith(SpringExtension.class)
@@ -64,6 +68,23 @@ public class ConnectionTest {
     @Test
     public void deleteDept(){
         log.info("DEPT DELETE >>>>>>>>>>>>>> " + deptMapper.deleteDept(50));
+    }
+
+    @Test
+    public void deptSelectByOptionTest(){
+        log.info("################## " + deptMapper.selectByOption(DeptSearchOption.builder()
+                .searchType("loc")
+                .keyword("EW")
+                .build()));
+    }
+
+    @Test
+    public void deptSelectByDeptnosTest(){
+        List<Integer> list = new ArrayList();
+//        list.add(10);
+//        list.add(30);
+//        list.add(20);
+        log.info("##################### IN 연산 테스트 " + deptMapper.selectByDeptnos(list));
     }
 
 }

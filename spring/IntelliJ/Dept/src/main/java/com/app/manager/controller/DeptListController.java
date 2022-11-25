@@ -1,5 +1,6 @@
 package com.app.manager.controller;
 
+import com.app.manager.domain.DeptSearchOption;
 import com.app.manager.service.DeptListService;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,8 +16,12 @@ public class DeptListController {
     private DeptListService deptListService;
 
     @RequestMapping("/dept/list")
-    public void getDeptList(Model model){
-        model.addAttribute("deptList", deptListService.getList());
+//    public void getDeptList(Model model, DeptSearchOption deptSearchOption){
+    public String getDeptList(Model model, DeptSearchOption deptSearchOption){
+//        model.addAttribute("deptList", deptListService.getList());
+        model.addAttribute("deptList", deptListService.getSearchList(deptSearchOption));
         log.info("Dept List ...");
+
+        return "dept/lists";
     }
 }
