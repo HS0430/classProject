@@ -1,5 +1,6 @@
 package com.app.emp.controller;
 
+import com.app.emp.domain.EmpSearchDTO;
 import com.app.emp.service.EmpSelectService;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,8 +16,8 @@ public class EmpSelectController {
     private EmpSelectService empSelectService;
 
     @RequestMapping("/emp/list")
-    public void selectList(Model model){
+    public void selectList(Model model, EmpSearchDTO empSearchDTO){
         log.info("Emp List Controller ...");
-        model.addAttribute("emplist", empSelectService.selectList());
+        model.addAttribute("emplist", empSelectService.selectList(empSearchDTO));
     }
 }

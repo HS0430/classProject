@@ -2,6 +2,7 @@ package com.app.emp.mapper;
 
 import com.app.emp.domain.DeptDTO;
 import com.app.emp.domain.EmpDTO;
+import com.app.emp.domain.EmpSearchDTO;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
@@ -10,7 +11,8 @@ import java.util.List;
 public interface EmpMapper {
 
     // 전체 사원 리스트
-    List<EmpDTO> selectList();
+    List<EmpDTO> selectList(EmpSearchDTO empSearchDTO);
+    List<EmpDTO> selectList2();
 
     // 수정 / 상세 페이지
     EmpDTO selectByEmpno(int empno);

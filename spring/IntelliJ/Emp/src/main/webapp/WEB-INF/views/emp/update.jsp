@@ -30,7 +30,17 @@
       </tr>
       <tr>
         <td>담당</td>
-        <td><input type="number" name="mgr" id="mgr" value="${emp.mgr}"></td>
+        <td>
+          <select id="mgr" name="mgr">
+            <c:forEach items="${emplist}" var="emplist">
+            <option value="${emplist.mgr}"
+              <c:if test="${emplist.mgr eq emp.mgr}">selected="selected"</c:if>
+            >
+                ${emplist.mgr}</option>
+            </c:forEach>
+          </select>
+<%--          <input type="number" name="mgr" id="mgr" value="${emp.mgr}">--%>
+        </td>
       </tr>
       <tr>
         <td>입사일</td>
@@ -47,7 +57,11 @@
       <tr>
         <td>부서번호</td>
         <td>
-          <input type="number" name="deptno" id="deptno" value="${emp.deptno}">
+          <select name="deptno" id="deptno">
+            <c:forEach items="${dept}" var="dept">
+              <option value="${dept.deptno}" <c:if test="${dept.deptno eq emp.deptno}"> selected="selected"</c:if>>${dept.deptno} / ${dept.dname}</option>
+            </c:forEach>
+          </select>
         </td>
       </tr>
       <tr>

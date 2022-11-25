@@ -3,6 +3,7 @@ package com.app.emp.controller;
 import com.app.emp.domain.EmpDTO;
 import com.app.emp.service.EmpSelectByempnoService;
 import com.app.emp.service.EmpSelectDeptNoService;
+import com.app.emp.service.EmpSelectService;
 import com.app.emp.service.EmpUpdateService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -24,10 +25,14 @@ public class EmpUpdateController {
     @Autowired
     private EmpSelectDeptNoService empSelectDeptNoService;
 
+    @Autowired
+    private EmpSelectService empSelectService;
+
     @GetMapping
     public void updateEmpForm(@RequestParam("empno") int empno, Model model){
         model.addAttribute("emp", empSelectByempnoService.selectByEmpno(empno));
         model.addAttribute("dept", empSelectDeptNoService.selectDeptNo());
+        model.addAttribute("emplist", empSelectService.selectList2());
     }
 
     @PostMapping

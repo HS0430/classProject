@@ -14,6 +14,16 @@
 <body>
     <h1>사원 리스트</h1>
     <hr>
+    <form>
+        <select name="searchType">
+            <option value="empno">사원번호</option>
+            <option value="ename">사원명</option>
+            <option value="job">업무</option>
+            <option value="deptno">부서번호</option>
+        </select>
+        <input type="text" name="keyword">
+        <input type="submit" value="검색">
+    </form>
     <table border="1">
       <tr>
         <th>사원번호</th>

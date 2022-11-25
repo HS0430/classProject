@@ -3,7 +3,40 @@
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.app.emp.mapper.EmpMapper">
-    <select id="selectList"
+    <sql id="searchEmpno">
+        empno LIKE CONCAT('%', #{keyword}, '%')
+    </sql>
+    <sql id="searchEname">
+        ename LIKE CONCAT('%', #{keyword}, '%')
+    </sql>
+    <sql id="searchJob">
+        job LIKE CONCAT('%', #{keyword}, '%')
+    </sql>
+    <sql id="searchDeptno">
+        deptno LIKE CONCAT('%', #{keyword}, '%')
+    </sql>
+    <select id="selectList" parameterType="com.app.emp.domain.EmpSearchDTO" resultType="com.app.emp.domain.EmpDTO">
+        SELECT *
+        FROM emp
+        <where>
+        <if test="searchType != null and keyword != null">
+            <if test="searchType == 'empno'">
+                <include refid="searchEmpno"></include>
+            </if>
+            <if test="searchType == 'ename'">
+                <include refid="searchEname"></include>
+            </if>
+            <if test="searchType == 'job'">
+                <include refid="searchJob"></include>
+            </if>
+            <if test="searchType == 'deptno'">
+                <include refid="searchDeptno"></include>
+            </if>
+        </if>
+        </where>
+    </select>
+
+    <select id="selectList2"
     resultType="com.app.emp.domain.EmpDTO">
         SELECT * FROM emp
     </select>
