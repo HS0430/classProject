@@ -1,20 +1,22 @@
-package com.app.manager.service;
+package com.app.manager.service.emp;
 
 import com.app.manager.domain.DeptDTO;
+import com.app.manager.domain.EmpDTO;
 import com.app.manager.mapper.DeptMapper;
-import lombok.extern.java.Log;
+import com.app.manager.mapper.EmpMapper;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 @Log4j2
-public class DeptReadService {
+public class EmpReadService {
 
     @Autowired(required = false)
-    private DeptMapper deptMapper;
+    private EmpMapper empMapper;
 
-    public DeptDTO getDept(int deptno){
-        return deptMapper.selectByDeptno(deptno);
+    public EmpDTO getEmp(int empno){
+        return empMapper.selectByempno(empno);
     }
+
 }

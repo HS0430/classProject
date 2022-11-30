@@ -1,7 +1,7 @@
-package com.app.manager.controller;
+package com.app.manager.controller.dept;
 
 import com.app.manager.domain.DeptSearchOption;
-import com.app.manager.service.DeptListService;
+import com.app.manager.service.dept.DeptListService;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
