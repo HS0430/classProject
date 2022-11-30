@@ -2,6 +2,10 @@ package com.todo.todospring.domain;
 
 import lombok.*;
 
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Positive;
+
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
@@ -10,8 +14,11 @@ import lombok.*;
 @Builder
 public class Member {
 
+    @Positive
     private int idx;
+    @NotNull
     private String uid;
+    @NotNull
     private String pw;
     private String uuid;
     private String uname;
