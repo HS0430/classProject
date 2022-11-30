@@ -133,10 +133,9 @@
             console.log('res', res.data)
         })
         .catch(err => console.log(err))
-
-    axios.post('/api/v1/depts', { 'deptno':35, 'dname': 'DEV123', 'loc': '판교123'})
-        .then(res=> console.log(res))
-        .catch()
+    axios.post('/api/v1/depts',{ "deptno": 35, "dname": "DEV123", "loc": "판교123" })
+        .then(res => console.log(res))
+        .catch(err => console.log(err))
 </script>
 </body>
 </html>
