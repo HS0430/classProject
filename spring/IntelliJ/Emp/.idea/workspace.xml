@@ -5,49 +5,57 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c8bb1c32-1a4f-4dad-9b1d-3991f7b3f3f9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../Dept/src/main/java/com/app/manager/domain/DeptSearchOption.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Dept/src/main/java/com/app/manager/mapper/DeptMapper2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Dept/src/main/webapp/WEB-INF/views/dept/lists.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Dept/src/main/webapp/css/bootstrap/bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Dept/src/main/webapp/css/bootstrap/form-validation.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Dept/src/main/webapp/css/bootstrap/offcanvas.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Dept/src/main/webapp/js/assets/vendor/anchor.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Dept/src/main/webapp/js/assets/vendor/clipboard.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Dept/src/main/webapp/js/assets/vendor/holder.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Dept/src/main/webapp/js/assets/vendor/jquery-slim.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Dept/src/main/webapp/js/assets/vendor/popper.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Dept/src/main/webapp/js/bootstrap/bootstrap.bundle.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Dept/src/main/webapp/js/bootstrap/bootstrap.bundle.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Dept/src/main/webapp/js/bootstrap/bootstrap.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Dept/src/main/webapp/js/bootstrap/bootstrap.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Dept/src/main/webapp/js/bootstrap/offcanvas.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/app/emp/domain/EmpSearchDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Dept/.idea/webContexts.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Dept/src/main/java/com/app/manager/controller/emp/EmpEditController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Dept/src/main/java/com/app/manager/controller/emp/EmpListcontroller.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Dept/src/main/java/com/app/manager/controller/emp/EmpRegController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Dept/src/main/java/com/app/manager/controller/rest/DeptJsonMessageController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Dept/src/main/java/com/app/manager/controller/rest/DeptRestController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Dept/src/main/java/com/app/manager/controller/rest/ExampleRestController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Dept/src/main/java/com/app/manager/controller/rest/SimpleConverterController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Dept/src/main/java/com/app/manager/domain/EmpDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Dept/src/main/java/com/app/manager/mapper/EmpMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Dept/src/main/java/com/app/manager/service/emp/EmpEditService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Dept/src/main/java/com/app/manager/service/emp/EmpListService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Dept/src/main/java/com/app/manager/service/emp/EmpReadService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Dept/src/main/java/com/app/manager/service/emp/EmpRegService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Dept/src/main/webapp/WEB-INF/views/emp/edit.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Dept/src/main/webapp/WEB-INF/views/emp/list.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Dept/src/main/webapp/WEB-INF/views/emp/register.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Dept/src/main/webapp/WEB-INF/views/mc/simple.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Dept/src/main/webapp/index2.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Dept/src/main/webapp/map.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Dept/src/main/webapp/map2.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../todoSpring/src/main/java/com/todo/todospring/mapper/MemberMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../todoSpring/src/main/java/com/todo/todospring/mapper/TodoMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../todoSpring/src/main/resources/mappers/MemberMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../todoSpring/src/main/resources/mappers/TodoMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Dept/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../Dept/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Dept/src/main/java/com/app/manager/controller/DeptListController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Dept/src/main/java/com/app/manager/controller/DeptListController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Dept/src/main/java/com/app/manager/controller/DeptRegController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Dept/src/main/java/com/app/manager/controller/DeptRegController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Dept/src/main/java/com/app/manager/controller/DeptDeleteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Dept/src/main/java/com/app/manager/controller/dept/DeptDeleteController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Dept/src/main/java/com/app/manager/controller/DeptEditController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Dept/src/main/java/com/app/manager/controller/dept/DeptEditController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Dept/src/main/java/com/app/manager/controller/DeptListController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Dept/src/main/java/com/app/manager/controller/dept/DeptListController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Dept/src/main/java/com/app/manager/controller/DeptRegController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Dept/src/main/java/com/app/manager/controller/dept/DeptRegController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Dept/src/main/java/com/app/manager/domain/DeptDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Dept/src/main/java/com/app/manager/domain/DeptDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Dept/src/main/java/com/app/manager/mapper/DeptMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Dept/src/main/java/com/app/manager/mapper/DeptMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Dept/src/main/java/com/app/manager/service/DeptListService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Dept/src/main/java/com/app/manager/service/DeptListService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Dept/src/main/java/com/app/manager/service/DeptRegService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Dept/src/main/java/com/app/manager/service/DeptRegService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Dept/src/main/resources/log4j2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Dept/src/main/resources/log4j2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Dept/src/main/resources/mappers/DeptMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Dept/src/main/resources/mappers/DeptMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Dept/src/main/java/com/app/manager/service/DeptDeleteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Dept/src/main/java/com/app/manager/service/dept/DeptDeleteService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Dept/src/main/java/com/app/manager/service/DeptEditService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Dept/src/main/java/com/app/manager/service/dept/DeptEditService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Dept/src/main/java/com/app/manager/service/DeptListService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Dept/src/main/java/com/app/manager/service/dept/DeptListService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Dept/src/main/java/com/app/manager/service/DeptReadService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Dept/src/main/java/com/app/manager/service/dept/DeptReadService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Dept/src/main/java/com/app/manager/service/DeptRegService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Dept/src/main/java/com/app/manager/service/dept/DeptRegService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Dept/src/main/webapp/WEB-INF/spring/root-context.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Dept/src/main/webapp/WEB-INF/spring/root-context.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Dept/src/main/webapp/WEB-INF/spring/servlet-context.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Dept/src/main/webapp/WEB-INF/spring/servlet-context.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Dept/src/main/webapp/WEB-INF/views/dept/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../Dept/src/main/webapp/WEB-INF/views/dept/list.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Dept/src/test/java/ConnectionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Dept/src/test/java/ConnectionTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/emp/controller/EmpInsertController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/emp/controller/EmpInsertController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/emp/controller/EmpSelectController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/emp/controller/EmpSelectController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/emp/controller/EmpUpdateController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/emp/controller/EmpUpdateController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/emp/domain/EmpDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/emp/domain/EmpDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/emp/mapper/EmpMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/emp/mapper/EmpMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/emp/service/EmpInsertService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/emp/service/EmpInsertService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/emp/service/EmpSelectService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/emp/service/EmpSelectService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mappers/EmpMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mappers/EmpMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/emp/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/emp/list.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/emp/update.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/emp/update.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springMVC/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../springMVC/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../todoSpring/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../todoSpring/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../todoSpring/src/main/java/com/todo/todospring/domain/LoginInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../todoSpring/src/main/java/com/todo/todospring/domain/LoginInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../todoSpring/src/main/java/com/todo/todospring/domain/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/../todoSpring/src/main/java/com/todo/todospring/domain/Member.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../todoSpring/src/main/java/com/todo/todospring/domain/MemberRegRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../todoSpring/src/main/java/com/todo/todospring/domain/MemberRegRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../todoSpring/src/main/java/com/todo/todospring/domain/OldTodoDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../todoSpring/src/main/java/com/todo/todospring/domain/OldTodoDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../todoSpring/src/main/java/com/todo/todospring/service/LoginService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../todoSpring/src/main/java/com/todo/todospring/service/LoginService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../todoSpring/src/main/java/com/todo/todospring/service/MemberRegService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../todoSpring/src/main/java/com/todo/todospring/service/MemberRegService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../todoSpring/src/main/java/com/todo/todospring/service/TodoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../todoSpring/src/main/java/com/todo/todospring/service/TodoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../todoSpring/src/main/java/com/todo/todospring/service/TodoServiceOld.java" beforeDir="false" afterPath="$PROJECT_DIR$/../todoSpring/src/main/java/com/todo/todospring/service/TodoServiceOld.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../todoSpring/src/main/webapp/WEB-INF/spring/root-context.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../todoSpring/src/main/webapp/WEB-INF/spring/root-context.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../todoSpring/src/main/webapp/WEB-INF/views/notfound404.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../todoSpring/src/main/webapp/WEB-INF/views/notfound404.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -218,7 +226,9 @@
       <updated>1669271166347</updated>
       <workItem from="1669271167655" duration="7711000" />
       <workItem from="1669337716569" duration="3079000" />
-      <workItem from="1669357152828" duration="3701000" />
+      <workItem from="1669357152828" duration="5237000" />
+      <workItem from="1669768537861" duration="1347000" />
+      <workItem from="1669790388859" duration="23000" />
     </task>
     <servers />
   </component>
