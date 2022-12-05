@@ -15,6 +15,7 @@
             <div class="col-md-7 col-lg-12">
                 <form method="post" action="/member/insert" class="needs-validation" novalidate>
                     <div class="row g-3">
+                        <input type="hidden" name="userIdx" id="userIdx" value="0">
                         <div class="col-sm-12">
                             <label for="userId" class="form-label">User Id</label>
                             <input type="text" class="form-control" id="userId" name="userId">

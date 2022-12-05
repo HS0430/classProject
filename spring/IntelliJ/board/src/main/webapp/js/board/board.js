@@ -38,6 +38,7 @@ function boardList(page){
             else {
                 $('tr td').remove();
                 // $(data).each(function(){
+                console.log(data)
                 for (var i = 0; i < data.bList.length; i++) {
                     let tr = document.createElement(`tr`);
                     tr.innerHTML = `

@@ -5,7 +5,7 @@
     <link href="/css/assets/bootstrap.min.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="/js/board/board.js"></script>
-    <title>Title</title>
+    <title>Board List Page</title>
 </head>
 <body class="bg-light">
 <div class="container">
@@ -18,6 +18,7 @@
         <ul class="nav nav-pills">
             <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">Board</a></li>
             <li class="nav-item"><a href="#" class="nav-link">Member</a></li>
+            <li class="nav-item"><a href="/logout.jsp" class="nav-link">Logout</a></li>
         </ul>
     </header>
     <div class="py-5 text-center">
