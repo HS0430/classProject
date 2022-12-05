@@ -1,0 +1,67 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.app.board.mapper.BoardMapper">
+    <sql id="searchTitle">
+        title LIKE CONCAT('%', #{keyword}, '%')
+    </sql>
+    <sql id="searchWriter">
+        writer LIKE CONCAT('%', #{keyword}, '%')
+    </sql>
+
+    <select id="listBoard" resultType="com.app.board.domain.Board">
+        SELECT @ROWNUM := @ROWNUM +1 AS rnum, b.*
+        FROM board b, (SELECT @ROWNUM := #{pageNo}) TMP
+        <where>
+            <if test="searchType != null and keyword != null">
+                <if test="searchType == 'title'">
+                    <include refid="searchTitle"></include>
+                </if>
+                <if test="searchType == 'writer'">
+                    <include refid="searchWriter"></include>
+                </if>
+            </if>
+        </where>
+        LIMIT #{pageNo}, #{pageSize}
+    </select>
+
+    <insert id="regBoard" parameterType="com.app.board.domain.Board">
+        INSERT INTO
+        board (title, content, writer)
+        VALUES (#{title}, #{content}, #{writer})
+    </insert>
+
+    <select id="getBoard" resultType="com.app.board.domain.Board">
+        SELECT * FROM board
+        WHERE bno=#{bno}
+    </select>
+    
+    <update id="modifyBoard" parameterType="com.app.board.domain.Board">
+        UPDATE board
+        SET title=#{title}, content=#{content}, updatedate=now()
+        WHERE bno=#{bno}
+    </update>
+
+    <delete id="deleteBoard">
+        DELETE
+        FROM board
+        WHERE bno=#{bno}
+    </delete>
+
+
+    <select id="getTotalCount" resultType="int">
+        SELECT COUNT(*) FROM board
+        <where>
+            <if test="searchType != null and keyword != null">
+                <if test="searchType == 'title'">
+                    <include refid="searchTitle"></include>
+                </if>
+                <if test="searchType == 'writer'">
+                    <include refid="searchWriter"></include>
+                </if>
+            </if>
+        </where>
+    </select>
+
+</mapper>
