@@ -1,13 +1,15 @@
-# 홀인원 (스크린 골프 예약 서비스)
+# 게시판
 ## 기술/구조
 * JAVA 
-* DBMS - Oracle
-* SQL
-    `INSERT, SELECT, UPDATE, DELETE..`
+* DBMS - Mysql
+* ajax
+* JavaScript
+* CSS
+* Spring
 <br><br>
 
 ## 프로젝트 구조
-Controller > Service > DAO
+JSP > Controller > Service > Mapper
 <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DTO
 <br><br>
 
