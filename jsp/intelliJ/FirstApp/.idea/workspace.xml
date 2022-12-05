@@ -9,21 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="828b01f3-0119-488d-99ca-0e62d55982fc" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../../../spring/IntelliJ/board/src/main/java/com/app/board/controller/BoardReplyController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../spring/IntelliJ/board/src/main/java/com/app/board/domain/Reply.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../spring/IntelliJ/board/src/main/java/com/app/board/mapper/BoardReplyMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../spring/IntelliJ/board/src/main/java/com/app/board/service/BoardReplyService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../spring/IntelliJ/board/src/main/resources/mappers/BoardReplyMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../spring/IntelliJ/Emp/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../spring/IntelliJ/Emp/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../spring/IntelliJ/board/src/main/java/com/app/board/domain/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../spring/IntelliJ/board/src/main/java/com/app/board/domain/Member.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../spring/IntelliJ/board/src/main/webapp/WEB-INF/views/board/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../spring/IntelliJ/board/src/main/webapp/WEB-INF/views/board/list.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../spring/IntelliJ/board/src/main/webapp/WEB-INF/views/board/modify.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../spring/IntelliJ/board/src/main/webapp/WEB-INF/views/board/modify.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../spring/IntelliJ/board/src/main/webapp/WEB-INF/views/member/insert.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../spring/IntelliJ/board/src/main/webapp/WEB-INF/views/member/insert.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../spring/IntelliJ/board/src/main/webapp/js/board/board.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../../spring/IntelliJ/board/src/main/webapp/js/board/board.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../spring/IntelliJ/board/src/main/webapp/js/board/board_modify.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../../spring/IntelliJ/board/src/main/webapp/js/board/board_modify.js" afterDir="false" />
-    </list>
+    <list default="true" id="828b01f3-0119-488d-99ca-0e62d55982fc" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

@@ -4,21 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c8bb1c32-1a4f-4dad-9b1d-3991f7b3f3f9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../board/src/main/java/com/app/board/controller/BoardReplyController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../board/src/main/java/com/app/board/domain/Reply.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../board/src/main/java/com/app/board/mapper/BoardReplyMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../board/src/main/java/com/app/board/service/BoardReplyService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../board/src/main/resources/mappers/BoardReplyMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../jsp/intelliJ/FirstApp/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../jsp/intelliJ/FirstApp/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../board/src/main/java/com/app/board/domain/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/../board/src/main/java/com/app/board/domain/Member.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../board/src/main/webapp/WEB-INF/views/board/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../board/src/main/webapp/WEB-INF/views/board/list.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../board/src/main/webapp/WEB-INF/views/board/modify.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../board/src/main/webapp/WEB-INF/views/board/modify.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../board/src/main/webapp/WEB-INF/views/member/insert.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../board/src/main/webapp/WEB-INF/views/member/insert.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../board/src/main/webapp/js/board/board.js" beforeDir="false" afterPath="$PROJECT_DIR$/../board/src/main/webapp/js/board/board.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../board/src/main/webapp/js/board/board_modify.js" beforeDir="false" afterPath="$PROJECT_DIR$/../board/src/main/webapp/js/board/board_modify.js" afterDir="false" />
-    </list>
+    <list default="true" id="c8bb1c32-1a4f-4dad-9b1d-3991f7b3f3f9" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
