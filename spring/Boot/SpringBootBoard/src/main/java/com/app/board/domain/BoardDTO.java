@@ -12,6 +12,7 @@ import java.time.LocalDate;
 @ToString
 public class BoardDTO {
 
+    private int rnum;
     private int bno;
     private String title;
     private String content;
