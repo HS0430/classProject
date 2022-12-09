@@ -30,9 +30,6 @@ public class BoardDeleteService {
                 delFile.delete();
             }
         }
-
-
-
         return result;
     }
 
