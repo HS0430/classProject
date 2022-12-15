@@ -1,5 +1,6 @@
 package com.app.board;
 
+import com.app.board.domain.BoardArticleDTO;
 import com.app.board.domain.BoardDTO;
 import com.app.board.mapper.BoardMapper;
 import lombok.extern.log4j.Log4j2;
@@ -23,7 +24,7 @@ public class MapperTest {
         //log.info("board List ::::::::::::::: " + list1);
 
         // 1페이지 : 10개의 게시물
-        List<BoardDTO> list1 = boardMapper.selectList(30, 10);
+        List<BoardArticleDTO> list1 = boardMapper.selectList(30, 10);
         log.info(list1);
 
     }

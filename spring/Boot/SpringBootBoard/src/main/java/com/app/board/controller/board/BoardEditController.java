@@ -30,6 +30,7 @@ public class BoardEditController {
             Model model
     ){
         model.addAttribute("board", boardViewService.selectBoardDTO(bno));
+        log.info("#######################Get" + boardViewService.selectBoardDTO(bno));
         model.addAttribute("curPageNum", p);
     }
 
@@ -38,7 +39,7 @@ public class BoardEditController {
             BoardEditRequest boardEditRequest,
             RedirectAttributes redirectAttributes
     ){
-        log.info(boardEditRequest);
+        log.info("#######################Post" + boardEditRequest);
 
         boardEditService.edit(boardEditRequest);
 

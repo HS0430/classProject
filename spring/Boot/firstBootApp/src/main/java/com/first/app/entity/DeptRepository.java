@@ -7,6 +7,7 @@ import org.springframework.data.repository.query.Param;
 import java.util.List;
 
 public interface DeptRepository extends JpaRepository<Dept, Integer> {
+
     @Query("select d from Dept d where d.deptno = ?1")
     Dept findByDeptno(Integer deptno);
 
@@ -21,7 +22,5 @@ public interface DeptRepository extends JpaRepository<Dept, Integer> {
 
     @Query("select d from Dept d where d.deptno between :startNum and :endNum")
     List<Dept> findByDeptnoBetween(@Param("startNum") Integer startNum, @Param("endNum") Integer endNum);
-
-
 
 }

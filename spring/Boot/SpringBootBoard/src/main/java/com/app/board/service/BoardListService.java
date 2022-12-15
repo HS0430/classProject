@@ -1,39 +1,41 @@
 package com.app.board.service;
 
-import com.app.board.domain.BoardDTO;
+import com.app.board.Entity.Board;
+import com.app.board.Repository.BoardRepository;
 import com.app.board.domain.BoardListPage;
-import com.app.board.mapper.BoardMapper;
+import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
 
 @Service
+@Log4j2
 public class BoardListService {
 
     @Autowired
-    private BoardMapper boardMapper;
+    private BoardRepository boardRepository;
 
 
     public BoardListPage getPage(int pageNum){
 
-        // 게시물의 리스트
-        List<BoardDTO> list = boardMapper.selectList((pageNum-1)*10, 10);
-
-        // 전체 게시물의 개수
-        int totalCount = boardMapper.totalCount();
-
-        BoardListPage boardListPage = new BoardListPage(10, pageNum, list, totalCount);
+        Pageable pageable = PageRequest.of(pageNum-1, 10, Sort.by("bno").descending());
+        Page<Board> result = boardRepository.findAll(pageable);
+        BoardListPage boardListPage = new BoardListPage(10, pageNum, result.getContent(), Long.valueOf(result.getTotalElements()).intValue());
 
         return boardListPage;
     }
 
-    public List<BoardDTO> getList(int pageNum){
+    public Page<Board> getList(int pageNum){
 
-        int index = (pageNum-1)*10;  // 1->0, 2->10, 3->20, 4->30
         int count = 10;
+        Pageable pageable = PageRequest.of(pageNum-1, count, Sort.by("bno").descending());
+        Page<Board> result = boardRepository.findAll(pageable);
 
-        return boardMapper.selectList(index,count);
+        return result;
 
     }
 

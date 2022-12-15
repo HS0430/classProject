@@ -1,7 +1,7 @@
 package com.app.board.service;
 
-import com.app.board.domain.BoardDTO;
-import com.app.board.mapper.BoardMapper;
+import com.app.board.Entity.Board;
+import com.app.board.Repository.BoardRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -9,9 +9,9 @@ import org.springframework.stereotype.Service;
 public class BoardViewService {
 
     @Autowired
-    private BoardMapper boardMapper;
+    private BoardRepository boardRepository;
 
-    public BoardDTO selectBoardDTO(int bno){
-        return boardMapper.selectByBno(bno);
+    public Board selectBoardDTO(int bno){
+        return boardRepository.selectByBno(bno);
     }
 }

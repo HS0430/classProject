@@ -1,7 +1,7 @@
 package com.app.board.service;
 
-import com.app.board.domain.ReplyDTO;
-import com.app.board.mapper.ReplyMapper;
+import com.app.board.Entity.Reply;
+import com.app.board.Repository.ReplyRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -9,9 +9,9 @@ import org.springframework.stereotype.Service;
 public class ReplyReadService {
 
     @Autowired
-    private ReplyMapper replyMapper;
+    private ReplyRepository replyRepository;
 
-    public ReplyDTO selectByRno(int rno){
-        return replyMapper.selectByRno(rno);
+    public Reply selectByRno(int rno){
+        return replyRepository.selectByRno(rno);
     }
 }

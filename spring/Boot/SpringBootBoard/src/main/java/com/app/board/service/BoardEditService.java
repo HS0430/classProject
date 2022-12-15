@@ -1,8 +1,8 @@
 package com.app.board.service;
 
-import com.app.board.domain.BoardDTO;
+import com.app.board.Entity.Board;
+import com.app.board.Repository.BoardRepository;
 import com.app.board.domain.BoardEditRequest;
-import com.app.board.mapper.BoardMapper;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -10,7 +10,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
 import java.io.IOException;
-import java.sql.SQLException;
+import java.time.LocalDate;
 import java.util.UUID;
 
 @Service
@@ -18,7 +18,7 @@ import java.util.UUID;
 public class BoardEditService {
 
     @Autowired
-    private BoardMapper boardMapper;
+    private BoardRepository boardRepository;
 
     public int edit(BoardEditRequest boardEditRequest){
 
@@ -56,20 +56,22 @@ public class BoardEditService {
             }
         }
     
-        BoardDTO boardDTO = boardEditRequest.toBoardDTO();
+        Board board = boardEditRequest.toBoard();
+
         if(newFileName != null){
-            boardDTO.setPhoto(newFileName);
+            board.setPhoto(newFileName);
         }
 
         if(newFileName == null && boardEditRequest.getOldFile().isEmpty()){
-            boardDTO.setPhoto(null);
+            board.setPhoto(null);
         }
 
         int result = 0;
 
         try {
             // db update
-            result = boardMapper.update(boardDTO);
+            board.setUpdatedate(LocalDate.now());
+            boardRepository.save(board);
 
             // 새로운 파일이 저장되고 이전 파일이 존재한다면 -> 이전 파일을 삭제
             String oldFileName = boardEditRequest.getOldFile();
@@ -79,7 +81,7 @@ public class BoardEditService {
                     delOldFile.delete();
                 }
             }
-        }catch (SQLException e){
+        }catch (Exception e){
             // 새롭게 저장된 파일을 삭제
             if(newFileName!=null){
                 File delFile = new File(saveDir, newFileName);

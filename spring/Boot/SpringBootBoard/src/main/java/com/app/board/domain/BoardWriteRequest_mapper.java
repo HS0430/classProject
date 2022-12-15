@@ -1,6 +1,5 @@
 package com.app.board.domain;
 
-import com.app.board.Entity.Board;
 import lombok.*;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -10,23 +9,20 @@ import org.springframework.web.multipart.MultipartFile;
 @Setter
 @ToString
 @Builder
-public class BoardEditRequest {
+public class BoardWriteRequest_mapper {
 
-    private int bno;
-    private int curPageNum;
     private String title;
     private String writer;
     private String content;
-    private String oldFile;
     private MultipartFile formFile;
 
-    public Board toBoard(){
-        return Board.builder()
-                .bno(bno)
-                .writer(writer)
+
+    public BoardDTO toBoardDTO(){
+        return BoardDTO.builder()
                 .title(title)
                 .content(content)
-                .photo(oldFile)
+                .writer(writer)
                 .build();
     }
+
 }

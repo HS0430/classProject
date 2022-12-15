@@ -1,5 +1,6 @@
 package com.app.board.domain;
 
+import com.app.board.Entity.Board;
 import lombok.*;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -17,8 +18,8 @@ public class BoardWriteRequest {
     private MultipartFile formFile;
 
 
-    public BoardDTO toBoardDTO(){
-        return BoardDTO.builder()
+    public Board toBoard(){
+        return Board.builder()
                 .title(title)
                 .content(content)
                 .writer(writer)

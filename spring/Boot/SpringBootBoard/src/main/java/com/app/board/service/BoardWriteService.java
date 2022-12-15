@@ -1,8 +1,8 @@
 package com.app.board.service;
 
-import com.app.board.domain.BoardDTO;
+import com.app.board.Entity.Board;
+import com.app.board.Repository.BoardRepository;
 import com.app.board.domain.BoardWriteRequest;
-import com.app.board.mapper.BoardMapper;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -10,7 +10,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
 import java.io.IOException;
-import java.sql.SQLException;
+import java.time.LocalDate;
 import java.util.UUID;
 
 @Service
@@ -18,7 +18,7 @@ import java.util.UUID;
 public class BoardWriteService {
 
     @Autowired
-    private BoardMapper boardMapper;
+    private BoardRepository boardRepository;
 
     public int write(BoardWriteRequest boardWriteRequest){
 
@@ -57,18 +57,20 @@ public class BoardWriteService {
 
         }
 
-        BoardDTO boardDTO = boardWriteRequest.toBoardDTO();
+        Board board = boardWriteRequest.toBoard();
 
         if(newFileName != null){
-            boardDTO.setPhoto(newFileName);
+            board.setPhoto(newFileName);
         }
 
         int result = 0;
 
         try {
             // DB insert
-            result = boardMapper.insert(boardDTO);
-        } catch (SQLException e){
+            board.setRegdate(LocalDate.now());
+            board.setUpdatedate(LocalDate.now());
+            boardRepository.save(board);
+        } catch (Exception e){
             if(newFileName!=null){
                 File delFile = new File(saveDir, newFileName);
                 if(delFile.exists()){

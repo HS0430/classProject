@@ -1,6 +1,5 @@
 package com.app.board.domain;
 
-import com.app.board.Entity.Board;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -10,7 +9,7 @@ import java.util.List;
 @Getter
 @Setter
 @ToString
-public class BoardListPage {
+public class BoardListPage_mapper {
 
     // 페이지당 출력할 게시물의 개수
     private int countPerPage;
@@ -19,7 +18,7 @@ public class BoardListPage {
     private int pageNum;
 
     // 게시물의 리스트
-    private List<Board> list;
+    private List<BoardArticleDTO> list;
 
     // 전체 게시물의 개수
     private int totalCount;
@@ -36,10 +35,10 @@ public class BoardListPage {
     // 다음 버튼 출력 여부
     private boolean next;
 
-    public BoardListPage(
+    public BoardListPage_mapper(
             int countPerPage,
             int pageNum,
-            List<Board> list,
+            List<BoardArticleDTO> list,
             int totalCount) {
         this.countPerPage = countPerPage;
         this.pageNum = pageNum;
