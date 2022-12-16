@@ -35,9 +35,11 @@ public class CustomSecurityConfig {
                         .antMatchers("/sample/all").permitAll()
                         .antMatchers("/sample/member").hasRole("USER")
                         .antMatchers("/sample/admin").hasRole("ADMIN");
+//                        .antMatchers("/admin/**").hasRole("ADMIN");
 
         // 2. form 기반 인증처리 : 커스텀 로그인 페이지 설정 -> 성공 시 처리하는 핸들러 객체 등록
         http.formLogin().loginPage("/sample/login").successHandler(successHandler());
+//        http.formLogin().loginPage("/sample/login").successForwardUrl("/sample/member");
 
         // 3. 허가 실패 403 : 권한 부족의 처리 핸들러
         http.exceptionHandling().accessDeniedHandler(accessDeniedHandler());
