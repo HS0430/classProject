@@ -33,7 +33,7 @@ public class CustomLoginSuccessHandler implements AuthenticationSuccessHandler {
 
         boolean passResult = passwordEncoder.matches(pw, authMemberDTO.getPassword());
         if(passResult){
-            response.sendRedirect("/login?error");
+            response.sendRedirect("/sample/login?error");
         }
 
         log.info(">>>>>>>>>>>>>>>>>>>>> Auth " + authMemberDTO.getAuthorities());

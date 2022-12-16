@@ -28,6 +28,7 @@ public class CustomSecurityConfig {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         // Security의 설정
+        http.csrf().disable();
         // 1. 요청(URL)에 대한 인증과 허가에 대한 설정
         http.authorizeHttpRequests()
                         .antMatchers("/sample/sample").authenticated() // 해당 경로 요청 시 인증을 요구한다.
@@ -36,7 +37,7 @@ public class CustomSecurityConfig {
                         .antMatchers("/sample/admin").hasRole("ADMIN");
 
         // 2. form 기반 인증처리 : 커스텀 로그인 페이지 설정 -> 성공 시 처리하는 핸들러 객체 등록
-        http.formLogin().successHandler(successHandler());
+        http.formLogin().loginPage("/sample/login").successHandler(successHandler());
 
         // 3. 허가 실패 403 : 권한 부족의 처리 핸들러
         http.exceptionHandling().accessDeniedHandler(accessDeniedHandler());

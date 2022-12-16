@@ -30,4 +30,8 @@ public class SampleController {
         log.info("admin .....");
     }
 
+    @GetMapping("/login")
+    public void login(){
+        log.info("login .....");
+    }
 }
