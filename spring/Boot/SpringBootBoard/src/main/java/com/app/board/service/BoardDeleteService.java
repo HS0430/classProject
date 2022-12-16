@@ -23,7 +23,7 @@ public class BoardDeleteService {
 
         // 삭제하려는 게시물 데이터
         Board board = boardRepository.selectByBno(bno);
-        
+
         int replyResult = replyRepository.deleteByBno(bno);
         int result = boardRepository.deleteByBno(bno);
 
