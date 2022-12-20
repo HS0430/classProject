@@ -1,7 +1,9 @@
 package com.app.board.controller.board;
 
-import com.app.board.Entity.Reply;
-import com.app.board.service.*;
+import com.app.board.domain.ReplyDTO;
+import com.app.board.entity.Board;
+import com.app.board.entity.Reply;
+import com.app.board.service.reply.*;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -49,30 +51,30 @@ public class ReplyRestController {
     // post /reply => reply    JSON 데이터를 받아서 DB insert
     @PostMapping
     public ResponseEntity<Reply> insertReply(
-            @RequestBody Reply reply
+            @RequestBody ReplyDTO replyDTO
     ){
 
-        log.info("insert 전 : "+reply);
+        log.info("insert 전 : "+replyDTO);
 
         // Service -> Mapper
-        replyInsertService.insertReply(reply);
+        Reply resultReply = replyInsertService.insertReply(replyDTO);
 
-        log.info("insert 후 : "+reply);  // rno 값이 갱신된 데이터
+        log.info("insert 후 : "+resultReply);
 
-        //replyDTO.setReplydate(LocalDate.now().toString());
 
-        return new ResponseEntity<>(replyReadService.selectByRno(reply.getRno()), HttpStatus.OK);
+        //return new ResponseEntity<>(replyReadService.selectByRno(replyDTO.getRno()), HttpStatus.OK);
+        return new ResponseEntity<>(resultReply, HttpStatus.OK);
 
     }
 
     // put  /reply/{rno} => reply
     @PutMapping("/{rno}")
-    public ResponseEntity<Reply> editReply(
-            @RequestBody Reply reply,
+    public ResponseEntity<Integer> editReply(
+            @RequestBody ReplyDTO replyDTO,
             @PathVariable("rno") int rno
     ){
-        reply.setRno(rno);
-        return new ResponseEntity<>(replyEditService.updateReply(reply), HttpStatus.OK);
+        replyDTO.setRno(rno);
+        return new ResponseEntity<>(replyEditService.updateReply(replyDTO), HttpStatus.OK);
     }
 
     // delete /reply/{rno} => 0 / 1, success, fail
@@ -82,5 +84,9 @@ public class ReplyRestController {
     ){
         return new ResponseEntity<>(replyDeleteService.deleteByRno(rno), HttpStatus.OK);
     }
+
+
+
+
 
 }
