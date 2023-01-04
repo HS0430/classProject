@@ -1,24 +1,25 @@
-package com.app.board.controller.board;
+package com.app.todo.todo.controller;
 
-import com.app.board.service.board.BoardListService;
+import com.app.todo.todo.service.TodoListService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
-public class BoardListController {
+@RequestMapping("/todo")
+public class TodoListController {
 
     @Autowired
-    private BoardListService boardListService;
+    private TodoListService todoListService;
 
-    @GetMapping("/board/list")   // /board/list
-    public void getList(
+    @GetMapping("/list")
+    public void todoList(
             @RequestParam(value = "p", defaultValue = "1") int pageNum,
             Model model
     ){
-//        model.addAttribute("boardList", boardListService.getList(pageNum));
-        model.addAttribute("listPage", boardListService.getPage(pageNum));
+        model.addAttribute("listPage", todoListService.getTodoPage(pageNum));
     }
 }
